@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<style>
+.btn-group button {
+  background-color: #318BDC;
+  border: 10px solid white;
+  color: white;
+  padding: 20px 48px;
+  cursor: pointer;
+  width: 50%;
+  display: block;
+  font-size: 20px;
+}
+
+.btn-group button:not(:last-child) {
+  border-bottom: none; /* Prevent double borders */
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #3e8e41;
+}
+</style>
+<head>
+  <meta charset="utf-8">
+  <title>SRP Test Demo</title>
+
+
+  <!-- Branch metatags -->
+  <meta name="branch:deeplink:type" content="type can be set by hosting metatags" />
+
+
+  <script>
+    // load Branch
+    (function(b, r, a, n, c, h, _, s, d, k) {
+      if (!b[n] || !b[n]._q) {
+        for (; s < _.length;) c(h, _[s++]);
+        d = r.createElement(a);
+        d.async = 1;
+        d.src = "https://cdn.branch.io/branch-latest.min.js";
+        k = r.getElementsByTagName(a)[0];
+        k.parentNode.insertBefore(d, k);
+        b[n] = h
+      }
+    })(window, document, "script", "branch", function(b, r) {
+        b[r] = function() {
+          b._q.push([r, arguments])
+        }
+      }, {
+        _q: [],
+        _v: 1
+      },
+      "addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking"
+      .split(" "), 0);
+    // init Branch
+    // Poitning to Shardul Sandbox
+    // Initialize using a custom branch_match_id to set BFID
+    branch.init('key_live_hhGTGV2GqyKIRchAQJHOlpmiyCd3xPfm', {
+      'no_journeys': true
+    }, function(error, data) {
+      console.log(data);
+    });
+  </script>
+
+</head>
+
+<body>
+
+<h1 class="counter-display">(..)</h1>
+<button class="counter-minus">-</button>
+<button class="counter-plus">+</button>
+<button class="counter-reset">~</button>
+<button class="hide-banner">Hide Banner</button>
+<button class="show-banner">Show Banner</button>
+<button class="set-banner-data">Set Banner Data</button>
+
+<script type="text/javascript">
+
+
+let counterDisplayElem = document.querySelector('.counter-display');
+let counterMinusElem = document.querySelector('.counter-minus');
+let counterPlusElem = document.querySelector('.counter-plus');
+let counterResetElem = document.querySelector('.counter-reset');
+let hideBannerElem = document.querySelector('.hide-banner');
+let showBannerElem = document.querySelector('.show-banner');
+let setBannerDataElem = document.querySelector('.set-banner-data');
+
+
+let count = 6;
+
+updateDisplay();
+
+counterPlusElem.addEventListener("click",()=>{
+  count++;
+  updateDisplay();
+}) ;
+
+counterMinusElem.addEventListener("click",()=>{
+  count--;
+  updateDisplay();
+});
+
+counterResetElem.addEventListener("click",()=>{
+  count = 6;
+  updateDisplay();
+});
+
+
+hideBannerElem.addEventListener("click",()=>{
+  hideBanner();
+});
+
+showBannerElem.addEventListener("click",()=>{
+  displayBanner();
+});
+
+setBannerDataElem.addEventListener("click",()=>{
+  setBannerData();
+});
+
+function updateDisplay(){
+  counterDisplayElem.innerHTML = count;
+  if (count == 0) {
+    displayBanner();
+
+  }
+};
+
+function setBannerData() {
+  // optional additional deep link data
+var linkData = {
+  campaign: 'content 123',
+  channel: 'facebook',
+  feature: 'dashboard',
+  stage: 'new user',
+  tags: [ 'tag1', 'tag2', 'tag3' ],
+  alias: '',
+  data: {
+    'custom_bool': true,
+    'custom_int': Date.now(),
+    'custom_string': 'custom data value',
+    '$og_title': 'Title',
+    '$og_description': 'Description',
+    '$og_image_url':'http://lorempixel.com/400/400'
+  }
+};
+
+branch.setBranchViewData(linkData);
+}
+
+
+function displayBanner() {
+  branch.track("pageview");
+}
+
+function hideBanner() {
+  branch.closeJourney(function(err, data) {
+    console.log(err, data);
+  });
+}
+
+</script>
+
+
+</body>
+
+</html>
