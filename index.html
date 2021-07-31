@@ -28,6 +28,23 @@ div {
   margin: 0 auto;
 }
   
+div.container {
+    position: relative;
+    display: inline-block;
+}
+div.container span {
+    position: absolute;    
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+div.container span:before {
+   display: inline-block;
+   vertical-align: middle;
+   height: 100%;
+   content: '';
+}
+  
 </style>
 <head>
   <meta charset="utf-8">
