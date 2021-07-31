@@ -28,23 +28,6 @@ div {
   margin: 0 auto;
 }
   
-div.container {
-    position: relative;
-    display: inline-block;
-}
-div.container span {
-    position: absolute;    
-    text-align: center;
-    height: 100%;
-    width: 100%;
-}
-div.container span:before {
-   display: inline-block;
-   vertical-align: middle;
-   height: 100%;
-   content: '';
-}
-  
 </style>
 <head>
   <meta charset="utf-8">
@@ -93,10 +76,7 @@ div.container span:before {
     <img src="branch_icon.png" class="branch-button" width="10%" height="10%" title="Branch Help Docs"/>
     <img src="reset_icon.png" class="counter-reset" width="10%" height="10%" title="Reset" />
     <img src="minus_icon.png" class="counter-minus" width="10%" height="10%" title="Decrease Count" />
-    <span class="container" style="position: relative; text-align: center; " >
-      <img src="circle_icon.png" width="10%" height="10%" title="Count" /img>
-      <span class="counter-display"  title="Count" style="font-size:5em; color:#313e47; text-align: center;">(..)</span>
-    </span>
+    <span class="counter-display"  title="Count" style="font-size:5em; color:#313e47; text-align: center;">(..)</span>
     <img src="plus_icon.png" class="counter-plus" width="10%" height="10%" title="Increase Count" />
     <img src="show_icon.png" class="show-banner"width="10%" height="10%" title="Show Banner" />
     <img src="hide_icon.png" class="hide-banner" width="10%" height="10%" title="Hide Banner" />
