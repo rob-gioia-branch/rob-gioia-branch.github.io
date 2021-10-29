@@ -23,7 +23,8 @@
          if(iframe) {
            console.log(2);
            var content = iframe.contentWindow.document.body.innerHTML;
-           document.getElementsByTagName('html').getAttribute('lang') = language;
+           var element = document.getElementsByTagName("html");
+           element.setAttribute("lang", language);
          }
        }
 branch.addListener('didShowJourney', didShowBannerListener);
