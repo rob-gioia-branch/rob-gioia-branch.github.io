@@ -7,7 +7,7 @@
     branch.init('key_test_hk1FlcD5RfhGw2nZ4N4aplabtupf3JnP');
       
       var iframe = document.getElementById("branch-banner-iframe");
-      var language = window.navigator.userLanguage || window.navigator.language;
+      var language = navigator.userLanguage || navigator.language;
       console.log(language);
       var content = iframe.contentWindow.document.body.innerHTML;
       document.getElementsByTagName('html').getAttribute('lang') = language;
