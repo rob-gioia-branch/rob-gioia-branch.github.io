@@ -21,7 +21,11 @@
   </head>
   <body>
 <script>
+  var didShowBannerListener = function () {
+  var iframe = document.getElementById("branch-banner-iframe");
    alert(document.getElementById("branch-banner-iframe"));
+};          
+branch.addListener('didShowBanner', didShowBannerListener);
     </script>
   </body>
 </html>
