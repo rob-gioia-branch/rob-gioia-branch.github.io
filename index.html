@@ -9,8 +9,10 @@
       var iframe = document.getElementById("branch-banner-iframe");
       var language = window.navigator.userLanguage || window.navigator.language;
       console.log(language);
-      var content = iframe.contentDocument.document.body.innerHTML;
-      document.getElementsByTagName('html').getAttribute('lang') = language;
+      iframe.addEventListener("load", function() {
+        var content = iframe.contentWindow.document.body.innerHTML;
+        document.getElementsByTagName('html').getAttribute('lang') = language;
+      });
       
     </script>
   </head>
