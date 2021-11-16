@@ -3,14 +3,14 @@
   <head>
     <script type="text/javascript">
       function handleVerifyButtonClicked() {
-         var ctd = document.getElementById("ctd").innerHTML;
+         var ctd = document.getElementById("ctd").value;
          var pathToAASA = "https://" + ctd + "/apple-app-site-association";
          alert(pathToAASA);
       }
     </script>
   </head>
   <body>
-    <h2>Ads</h2>
+    <h2>AASA Testing Tool</h2>
     <form action="javascript:handleVerifyButtonClicked()">
       <label for="ctd">CTD:</label><br>
       <input type="text" id="ctd" name="ctd"><br><br>
