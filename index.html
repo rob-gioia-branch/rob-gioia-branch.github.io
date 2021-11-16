@@ -12,8 +12,12 @@
           alert("Error with AASA");
         }
       }
-      function checkLink(url) { 
-        return (fetch(url)).ok 
+      
+      function checkLink(url) {
+        var http = new XMLHttpRequest();
+        http.open('HEAD', url, false);
+        http.send();
+        return http.status==200;
       }
     </script>
   </head>
