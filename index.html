@@ -5,7 +5,7 @@
       function handleVerifyButtonClicked() {
          var ctd = document.getElementById("ctd").value;
          var pathToAASA = "https://" + ctd + "/apple-app-site-association";
-         var isConfiguredProperly = checkLink(pathToAASA);
+         var isConfiguredProperly = async url => (await fetch(pathToAASA)).ok
          if(isConfiguredProperly) {
           alert("AASA is correct!");
         } else {
