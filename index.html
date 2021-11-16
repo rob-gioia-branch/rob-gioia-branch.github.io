@@ -5,8 +5,8 @@
       function handleVerifyButtonClicked() {
          var ctd = document.getElementById("ctd").value;
          var pathToAASA = "https://" + ctd + "/apple-app-site-association";
-         var isConfiguredProperly = pathToAASA;
-        if(isConfiguredProperly) {
+         var isConfiguredProperly = checkLink(pathToAASA);
+         if(isConfiguredProperly) {
           alert("AASA is correct!");
         } else {
           alert("Error with AASA");
