@@ -5,8 +5,20 @@
       function handleVerifyButtonClicked() {
          var ctd = document.getElementById("ctd").value;
          var pathToAASA = "https://" + ctd + "/apple-app-site-association";
-         var response = await fetch(pathToAASA);
-         alert(response.blob());
+         let myRequest = new Request(pathToAASA);
+
+          fetch(myRequest)
+          .then(function(response) {
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.blob();
+          })
+          .then(function(response) {
+            var r = response;
+            alert(response);
+            
+          });
       }
     </script>
   </head>
