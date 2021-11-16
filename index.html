@@ -3,7 +3,7 @@
   <head>
     <script type="text/javascript">
       function handleVerifyButtonClicked() {
-         var ctd = document.getElementById("ctd");
+         var ctd = document.getElementById("ctd").innerHTML;
          var pathToAASA = "https://" + ctd + "/apple-app-site-association";
          alert(pathToAASA);
       }
