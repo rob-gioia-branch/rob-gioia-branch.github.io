@@ -5,7 +5,7 @@
       function handleVerifyButtonClicked() {
          var ctd = document.getElementById("ctd").value;
          var pathToAASA = "https://" + ctd + "/apple-app-site-association";
-         alert(getBody(pathToAASA));
+         alert(checkLink(pathToAASA));
       }
       function checkLink(url) { 
         return (fetch(url)).ok 
