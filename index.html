@@ -2,14 +2,16 @@
 <html>
   <head>
     <script type="text/javascript">
-      function handleIt() {
-        alert("hello");
+      function handleVerifyButtonClicked() {
+         var ctd = document.getElementById("ctd");
+         var pathToAASA = "https://" + ctd + "/apple-app-site-association";
+         alert(pathToAASA);
       }
     </script>
   </head>
   <body>
     <h2>Ads</h2>
-    <form action="javascript:handleIt()">
+    <form action="javascript:handleVerifyButtonClicked()">
       <label for="ctd">CTD:</label><br>
       <input type="text" id="ctd" name="ctd"><br><br>
       
