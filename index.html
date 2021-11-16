@@ -5,20 +5,9 @@
       function handleVerifyButtonClicked() {
          var ctd = document.getElementById("ctd").value;
          var pathToAASA = "https://" + ctd + "/apple-app-site-association";
-         let myRequest = new Request(pathToAASA);
-
-          fetch(myRequest)
-          .then(function(response) {
-            if (!response.ok) {
-              throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.blob();
-          })
-          .then(function(response) {
-            var r = response;
-            alert(response);
-            
-          });
+         alert(getBody());
+         async checkLink(url) { return (await fetch(url)).ok }
+         async getBody(url) { return (await fetch(url)).body }
       }
     </script>
   </head>
@@ -27,13 +16,6 @@
     <form action="javascript:handleVerifyButtonClicked()">
       <label for="ctd">CTD:</label><br>
       <input type="text" id="ctd" name="ctd"><br><br>
-      
-      <label for="app_prefix">App Prefix:</label><br>
-      <input type="text" id="app_prefix" name="app_prefix"><br><br>
-      
-      <label for="bundle_id">Bundle ID:</label><br>
-      <input type="text" id="bundle_id" name="bundle_id"><br><br>
-      
       <input type="submit" value="Submit">
     </form>
   </body>
