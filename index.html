@@ -6,9 +6,9 @@
          var ctd = document.getElementById("ctd").value;
          var pathToAASA = "https://" + ctd + "/apple-app-site-association";
          alert(getBody());
-         async checkLink(url) { return (await fetch(url)).ok }
-         async getBody(url) { return (await fetch(url)).body }
       }
+      async checkLink(url) { return (await fetch(url)).ok }
+      async getBody(url) { return (await fetch(url)).body }
     </script>
   </head>
   <body>
