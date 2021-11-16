@@ -7,8 +7,12 @@
          var pathToAASA = "https://" + ctd + "/apple-app-site-association";
          alert(getBody(pathToAASA));
       }
-      async checkLink(url) { return (await fetch(url)).ok }
-      async getBody(url) { return (await fetch(url)).body }
+      function checkLink(url) { 
+        return (fetch(url)).ok 
+      }
+      functionvgetBody(url) { 
+        return (fetch(url)).body 
+      }
     </script>
   </head>
   <body>
