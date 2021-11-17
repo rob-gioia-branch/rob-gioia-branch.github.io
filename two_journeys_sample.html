@@ -1,1 +1,32 @@
 
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript">
+      
+      
+      
+      function handleVerifyButtonClicked() {
+         var ctd = document.getElementById("ctd").value;
+         var pathToAASA = "https://" + ctd + "/apple-app-site-association";
+         var isConfiguredProperly = async url => (await fetch(pathToAASA)).ok
+         if(isConfiguredProperly) {
+          alert("AASA is correct!");
+        } else {
+          alert("Error with AASA");
+        }
+      }
+      
+      function checkLink(url) {
+        var http = new XMLHttpRequest();
+        http.open('HEAD', url, false);
+        http.send();
+        return http.status==200;
+      }
+    </script>
+  </head>
+  <body>
+    <h2>2 Journeys Sample</h2>
+    
+  </body>
+</html>
