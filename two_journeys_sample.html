@@ -9,27 +9,22 @@
     // init Branch
     branch.init('key_live_alXEebrYD6sXYsXfU8PREhnhzrcWdEN8');
       
-    const doesJourneyExistOnPage = () => {
-    const branchBannerIframe = document.getElementById('branch-banner-iframe');
-    if (branchBannerIframe) {
-        return true;
+    var listener = function(event, data) { 
+        //Reopen
+        window.branch.track('pageview', {
+            'LoginLoaded': '1', // Metatag information.
+        });
     }
-    return false;
-    };
+    
+    branch.addListener('didCloseJourney', listener);
      
     function handleButtonClick() {
       if (window?.branch) {
         //Close
         window.branch.closeJourney();
-          
-        //Reopen
-        window.branch.track('pageview', {
-            'LoginLoaded': '1', // Metatag information.
-        });
       }
     }
       
-    
     </script>
   </head>
   <body>
