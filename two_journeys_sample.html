@@ -20,21 +20,12 @@
     function handleButtonClick() {
       if (window?.branch) {
         //Close
-
-        if(doesJourneyExistOnPage) {
-         window.branch.closeJourney();
+        window.branch.closeJourney();
           
         //Reopen
         window.branch.track('pageview', {
             'LoginLoaded': '1', // Metatag information.
         });
-        
-        window.branch.track('pageview');
-        } else {
-          window.branch.track('pageview', {
-            'LoginLoaded': '1', // Metatag information.
-        });
-        }
       }
     }
       
