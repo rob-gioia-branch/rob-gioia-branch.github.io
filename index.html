@@ -18,10 +18,10 @@
     // init Branch
     branch.init('key_test_ef6CmcD1uZvW0E1cQZ5o7ajfyFn6nr9a');
       
-    var branchBannerIframe = document.getElementById('branch-banner-iframe');
     var exampleContent = document.getElementById('exampleContent');
     
     var onJourneyShow = function(event, data) { 
+        var branchBannerIframe = document.getElementById('branch-banner-iframe');
         branchBannerIframe.style.top='0px';
         var iframeHeight = branchBannerIframe.offsetHeight;
         exampleContent.style.top = iframeHeight + 'px';
