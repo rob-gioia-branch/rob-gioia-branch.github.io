@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <head>
   <script>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700,300" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700,300" rel="stylesheet" type="text/css"/>
       <!-- Google tag (gtag.js) --> 
   </script>
   <script async src=https://www.googletagmanager.com/gtag/js?id=AW-1005357775>
@@ -12,14 +12,16 @@
   </script>
 </head>
 <body>
-  <button onclick="gtag_report_conversion(\'' + www.google.com + '\')"> CLICK ME!</button>
+  //<button onclick="gtag_report_conversion(\'' + www.google.com + '\')"> CLICK ME!</button>
+  //type="button" onclick="alert('Hello world!')"
+  <button type="button" onclick="alert('Hello world!')"> CLICK ME!</button>
   <script>
   function gtag_report_conversion(url) {
-//   var callback = function () {
-//     if (typeof(url) != 'undefined') {
-//       window.location = url;
-//     }
-//   };
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
 
   gtag('event', 'conversion', {
       'send_to': 'AW-1005357775/TaWxCILngYYYEM-Vst8D',
