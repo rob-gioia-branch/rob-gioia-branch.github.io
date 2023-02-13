@@ -15,16 +15,18 @@
   <button onclick="gtag_report_conversion(\'' + www.google.com + '\')"> CLICK ME!</button>
   <script>
   function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
+//   var callback = function () {
+//     if (typeof(url) != 'undefined') {
+//       window.location = url;
+//     }
+//   };
 
   gtag('event', 'conversion', {
       'send_to': 'AW-1005357775/TaWxCILngYYYEM-Vst8D',
       'event_callback': callback
   });
+    
+  alert("Hit");
 
   return false;
 
