@@ -17,9 +17,17 @@ async function loadCharacterImage(characterID, elementID) {
   const response = await fetch("https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/id/" + characterID + ".json");
   const jsonData = await response.json();
   const image = jsonData.images["lg"];
+  const name = jsonData.name;
   const element = document.getElementById(elementID);
   element.src=image;
   element.addEventListener('click', function (e) {
-    console.log(jsonData.name + "was clicked!");
+    const listView = document.getElementById("list-view");
+    const detailView = document.getElementById("detail-view");
+    listView.hidden = true;
+    detailView.hidden = false;
+    const characterName = document.getElementById("character-name");
+    const characterImage = document.getElementById("character-image");
+    characterName.value = name;
+    characterImage.src = image;
   });
 }
