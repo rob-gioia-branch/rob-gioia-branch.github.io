@@ -1,5 +1,5 @@
-function loadCharacterImages() {
-  loadCharacterImage("620", "marvel1");
+async function loadCharacterImages() {
+  await loadCharacterImage("620", "marvel1");
 }
 
 async function loadCharacterImage(characterID, elementID) {
