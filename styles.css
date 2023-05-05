@@ -13,9 +13,9 @@ body {
     float: left;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
+    padding: 62px 68px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 80px;
 }
 
 .topnav a:hover {
@@ -34,7 +34,7 @@ body {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 36px;
+    font-size: 100px;
 }
 
 .dc-head {
@@ -43,5 +43,5 @@ body {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 36px;
+    font-size: 100px;
 }
