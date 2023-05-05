@@ -1,27 +1,25 @@
+var marvelCharacterIds = ["620", "332", "149", "659", "717", "423", "196", "374"];
+var marvelElementIds = ["marvel1", "marvel2", "marvel3", "marvel4", "marvel5", "marvel6", "marvel7", "marvel8"];
+
+var dcCharacterIds = ["70", "644", "298", "266", "370", "514", "558", "63"];
+var dcElementIds = ["dc1", "dc2", "dc3", "dc4", "dc5", "dc6", "dc7", "dc8"];
+
 async function loadCharacterImages() {
-  await loadCharacterImage("620", "marvel1");
-  await loadCharacterImage("332", "marvel2");
-  await loadCharacterImage("149", "marvel3");
-  await loadCharacterImage("659", "marvel4");
-  await loadCharacterImage("717", "marvel5");
-  await loadCharacterImage("423", "marvel6");
-  await loadCharacterImage("196", "marvel7");
-  await loadCharacterImage("374", "marvel8");
-  
-  await loadCharacterImage("70", "dc1");
-  await loadCharacterImage("644", "dc2");
-  await loadCharacterImage("298", "dc3");
-  await loadCharacterImage("266", "dc4");
-  await loadCharacterImage("370", "dc5");
-  await loadCharacterImage("514", "dc6");
-  await loadCharacterImage("558", "dc7");
-  await loadCharacterImage("63", "dc8");
+  for(int i = 0; i < marvelCharacterIds.length; i++) {
+    await loadCharacterImage(marvelCharacterIds[i], marvelElementIds[i]);
+  }
+    for(int i = 0; i < dcCharacterIds.length; i++) {
+    await loadCharacterImage(dcCharacterIds[i], dcElementIds[i]);
+  }
 }
 
 async function loadCharacterImage(characterID, elementID) {
   const response = await fetch("https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/id/" + characterID + ".json");
   const jsonData = await response.json();
   const image = jsonData.images["lg"];
-  
-  document.getElementById(elementID).src=image;
+  const element = document.getElementById(elementID);
+  element.src=image;
+  element.addEventListener('click', function (e) {
+    console.log(jsonData.name + "was clicked!");
+  });
 }
