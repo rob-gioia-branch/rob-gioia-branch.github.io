@@ -45,3 +45,17 @@ body {
     font-size: 100px;
     padding: 100px 100px;
 }
+
+.detail-button {
+    display: block;
+    background-color: #FF0030;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 20%;
+}
