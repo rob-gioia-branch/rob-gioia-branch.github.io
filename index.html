@@ -14,7 +14,8 @@
       <a href="#marvel">Marvel</a>
       <a href="#dc">DC</a>
     </div>
-    <h2 class="marvel-head">Marvel</h2>
+    <div id="list-view" visibility="gone">
+      <h2 class="marvel-head">Marvel</h2>
       <div id="marvel-body">
         <img src='not_found.jpg' id="marvel1">
         <img src='not_found.jpg' id="marvel2">
@@ -25,7 +26,7 @@
         <img src='not_found.jpg' id="marvel7">
         <img src='not_found.jpg' id="marvel8">
       </div>
-    <h2 class="dc-head">DC</h2>
+      <h2 class="dc-head">DC</h2>
       <div id="dc-body">
         <img src='not_found.jpg' id="dc1">
         <img src='not_found.jpg' id="dc2">
@@ -36,5 +37,13 @@
         <img src='not_found.jpg' id="dc7">
         <img src='not_found.jpg' id="dc8">
       </div>
+    </div>
+    <div id="detail-view" hidden> 
+      <h1 id="character-name"></h1>
+      <img src='' id="character-image">
+      <img src='' id="qr-image">
+      <button>Show Journey</button>
+      <button>Track Event</button>
+    </div>
   </body>
 </html>
