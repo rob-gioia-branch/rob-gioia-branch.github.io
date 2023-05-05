@@ -10,14 +10,14 @@ async function loadCharacterImages() {
   await loadCharacterImage("456", "marvel9");
   
   await loadCharacterImage("70", "dc1");
-  await loadCharacterImage("644", "dc2);
-  await loadCharacterImage("298", "dc3);
-  await loadCharacterImage("266", "dc4);
-  await loadCharacterImage("370", "dc5);
-  await loadCharacterImage("514", "dc6);
-  await loadCharacterImage("558", "dc7);
-  await loadCharacterImage("63", "dc8);
-  await loadCharacterImage("491", "dc9);
+  await loadCharacterImage("644", "dc2");
+  await loadCharacterImage("298", "dc3");
+  await loadCharacterImage("266", "dc4");
+  await loadCharacterImage("370", "dc5");
+  await loadCharacterImage("514", "dc6");
+  await loadCharacterImage("558", "dc7");
+  await loadCharacterImage("63", "dc8");
+  await loadCharacterImage("491", "dc9");
 }
 
 async function loadCharacterImage(characterID, elementID) {
