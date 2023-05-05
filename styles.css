@@ -46,7 +46,7 @@ body {
     padding: 100px 100px;
 }
 
-.detail-button {
+.detail-button1 {
     display: block;
     background-color: #FF0030;
     border: none;
@@ -58,6 +58,24 @@ body {
     cursor: pointer;
     border-radius: 20%;
     margin-top: 50px;
+    position: absolute;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.detail-button2 {
+    display: block;
+    background-color: #FF0030;
+    border: none;
+    color: white;
+    padding: 50px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 36px;
+    cursor: pointer;
+    border-radius: 20%;
+    margin-top: 70px;
     position: absolute;
     left: 50%;
     -ms-transform: translateX(-50%);
