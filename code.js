@@ -27,7 +27,7 @@ async function loadCharacterImage(characterID, elementID) {
     detailView.hidden = false;
     const characterName = document.getElementById("character-name");
     const characterImage = document.getElementById("character-image");
-    characterName.value = name;
+    characterName.InnerHtml = name;
     characterImage.src = image;
   });
 }
