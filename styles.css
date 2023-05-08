@@ -81,3 +81,9 @@ body {
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
 }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
