@@ -6,6 +6,7 @@ var dcElementIds = ["dc1", "dc2", "dc3", "dc4", "dc5", "dc6", "dc7", "dc8"];
 
 const navbar = document.querySelector('#topnav');
 let top = navbar.offsetTop;
+
 function stickynavbar() {
   if (window.scrollY >= top) {    
     navbar.classList.add('sticky');
@@ -13,7 +14,14 @@ function stickynavbar() {
     navbar.classList.remove('sticky');    
   }
 }
+
 window.addEventListener('scroll', stickynavbar);
+
+function reloadHomepage() {
+  var redirectToURL = 'https://rob-gioia-branch.github.io/';
+  window.location.href = redirectToURL;
+  window.location.reload(true);
+}
 
 async function loadCharacterImages() {
   for(var i = 0; i < marvelCharacterIds.length; i++) {
