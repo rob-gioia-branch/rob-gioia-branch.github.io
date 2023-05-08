@@ -1,5 +1,5 @@
 import { Character } from './character.js';
-import { character } from './code.js';
+import * as sharedData from './shared-data.js';
 
 /*
   Load and initialize the Branch SDK
@@ -23,7 +23,7 @@ function initializeBranch(isTestMode = false) {
    • Uses the character name as the alias for the link
 */
 function shareBranchLink() {
-  const name = character.getCharacterName();
+  const name = sharedData.getCurrentCharacter().getCharacterName();
   var linkData = {
     alias: name,
     data: {
