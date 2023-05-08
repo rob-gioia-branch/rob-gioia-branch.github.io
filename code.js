@@ -6,7 +6,7 @@ var dcElementIds = ["dc1", "dc2", "dc3", "dc4", "dc5", "dc6", "dc7", "dc8"];
 
 var navbar;
 var topOffset = 0;
-export var character;
+export const character;
 
 function stickynavbar() {
   if (window.scrollY > topOffset) {    
