@@ -51,8 +51,8 @@ async function loadCharacterImage(characterID, elementID) {
 }
 
 function onDocumentLoaded() {
-  topOffset = navbar.offsetTop;
   navbar = document.getElementById('topnav');
+  topOffset = navbar.offsetTop;
 }
 
 window.addEventListener('scroll', stickynavbar);
