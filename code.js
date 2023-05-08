@@ -6,6 +6,7 @@ var dcElementIds = ["dc1", "dc2", "dc3", "dc4", "dc5", "dc6", "dc7", "dc8"];
 
 var navbar;
 var topOffset = 0;
+export var character;
 
 function stickynavbar() {
   if (window.scrollY > topOffset) {    
@@ -33,6 +34,7 @@ async function loadCharacterImages() {
 async function loadCharacterImage(characterID, elementID) {
   const response = await fetch("https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/id/" + characterID + ".json");
   const jsonData = await response.json();
+  character = new Character(jsonData);
   const image = jsonData.images["lg"];
   const qrCodeImage = jsonData.images["sm"];
   const name = jsonData.name;
