@@ -49,7 +49,7 @@ async function loadCharacterImage(characterID, elementID) {
     const characterImage = document.getElementById("character-image");
     characterName.innerHTML = name;
     characterImage.src = image;
-    export character;
+    export { character };
   });
 }
 
