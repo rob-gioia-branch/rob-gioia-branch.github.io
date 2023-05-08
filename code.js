@@ -10,7 +10,7 @@ var topOffset = 0;
 function stickynavbar() {
   console.log("Window " + window.scrollY);
   console.log("topOffset " + topOffset);
-  if (window.scrollY >= topOffset) {    
+  if (window.scrollY > topOffset) {    
     navbar.classList.add('sticky');
   } else {
     navbar.classList.remove('sticky');    
