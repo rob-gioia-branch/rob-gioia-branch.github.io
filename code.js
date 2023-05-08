@@ -5,7 +5,7 @@ var dcCharacterIds = ["70", "644", "298", "266", "370", "514", "558", "63"];
 var dcElementIds = ["dc1", "dc2", "dc3", "dc4", "dc5", "dc6", "dc7", "dc8"];
 
 const navbar = document.getElementById('topnav');
-let topOffset = navbar.offsetTop;
+var topOffset = 0;
 
 function stickynavbar() {
   if (window.scrollY >= topOffset) {    
@@ -50,4 +50,10 @@ async function loadCharacterImage(characterID, elementID) {
   });
 }
 
+function onDocumentLoaded() {
+  topOffset = navbar.offsetTop;
+}
+
 window.addEventListener('scroll', stickynavbar);
+document.addEventListener("DOMContentLoaded", onDocumentLoaded);
+
