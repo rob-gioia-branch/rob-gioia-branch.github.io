@@ -1,12 +1,8 @@
 export class Character {
-    let name;
-    let image;
-    let qrCodeImage;
-    
     constructor(json) {
-        name = json.name;
-        image = json.images["lg"];
-        qrCodeImage = json.images["sm"];
+        this.name = json.name;
+        this.image = json.images["lg"];
+        this.qrCodeImage = json.images["sm"];
     }
     
     export function getCharacterName() {
