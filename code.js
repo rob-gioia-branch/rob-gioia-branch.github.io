@@ -12,6 +12,7 @@ function stickynavbar() {
     navbar.classList.add('sticky');
   } else {
     navbar.classList.remove('sticky');    
+    console.log("hit");
   }
 }
 
