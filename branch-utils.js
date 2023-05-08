@@ -1,4 +1,5 @@
 import { Character } from './character.js';
+import { character } from './code.js';
 
 /*
   Load and initialize the Branch SDK
