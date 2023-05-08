@@ -15,8 +15,6 @@ function stickynavbar() {
   }
 }
 
-window.addEventListener('scroll', stickynavbar);
-
 function reloadHomepage() {
   var redirectToURL = 'https://rob-gioia-branch.github.io/';
   window.location.href = redirectToURL;
@@ -51,3 +49,5 @@ async function loadCharacterImage(characterID, elementID) {
     characterImage.src = image;
   });
 }
+
+window.addEventListener('scroll', stickynavbar);
