@@ -4,7 +4,7 @@ var marvelElementIds = ["marvel1", "marvel2", "marvel3", "marvel4", "marvel5", "
 var dcCharacterIds = ["70", "644", "298", "266", "370", "514", "558", "63"];
 var dcElementIds = ["dc1", "dc2", "dc3", "dc4", "dc5", "dc6", "dc7", "dc8"];
 
-const navbar = document.getElementById('topnav');
+var navbar;
 var topOffset = 0;
 
 function stickynavbar() {
@@ -52,6 +52,7 @@ async function loadCharacterImage(characterID, elementID) {
 
 function onDocumentLoaded() {
   topOffset = navbar.offsetTop;
+  navbar = document.getElementById('topnav');
 }
 
 window.addEventListener('scroll', stickynavbar);
