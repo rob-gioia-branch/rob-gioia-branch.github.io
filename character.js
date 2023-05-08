@@ -5,15 +5,15 @@ export class Character {
         this.qrCodeImage = json.images["sm"];
     }
     
-    export function getCharacterName() {
+    function getCharacterName() {
         return name;
     }
     
-    export function getCharacterImage() {
+    function getCharacterImage() {
         return image;
     }
     
-    export function getQRCodeImage() {
+    function getQRCodeImage() {
         return qrCodeImage;
     }
 }
