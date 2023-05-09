@@ -16,15 +16,15 @@ function initializeBranch(isTestMode = false) {
 }
 
 /*
-  Creates and shares a Branch link
+  Creates a Branch link and outputs it to the console
    • Uses the character name as the alias for the link
 */
-function shareBranchLink() {
+function createBranchLink() {
   const name = window.character.getCharacterName();
   var linkData = {
-    alias: "test",
+    alias: name,
     data: {
-    'name': "test",
+    'name': name,
   	}
   };
   branch.link(linkData, function(err, link) {
