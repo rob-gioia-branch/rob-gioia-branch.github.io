@@ -28,9 +28,6 @@ function shareBranchLink() {
   	}
   };
   branch.link(linkData, function(err, link) {
-  // bind elements
-  document.getElementById('detail-button1').onclick = function() {
   document.getElementById('link').href = link || err;
-   };
 });
 }
