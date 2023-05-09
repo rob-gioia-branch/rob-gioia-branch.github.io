@@ -48,14 +48,10 @@ body {
 
 button {
     background-color: #FF0030;
-    border: none;
     color: white;
     padding: 30px;
     text-align: center;
-    text-decoration: none;
     font-size: 36px;
-    cursor: pointer;
-    border-radius: 12px;
 } 
 
 .sticky {
@@ -70,4 +66,5 @@ button {
 
 .grid {
     disply: grid;   
+    grid-template-columns: 200px 200px 200px;
 }
