@@ -68,7 +68,6 @@ button {
 .grid {
     display: grid;   
     grid-template-columns: 450px 450px;
-    margin: auto;
     width: 100%;
 }
 
