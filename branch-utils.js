@@ -30,8 +30,7 @@ function shareBranchLink() {
   branch.link(linkData, function(err, link) {
   // bind elements
   document.getElementById('detail-button1').onclick = function() {
-    window.open(link || err);
-  };
   document.getElementById('link').href = link || err;
+   };
 });
 }
