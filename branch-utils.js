@@ -1,5 +1,3 @@
-import * as sharedData from './shared-data.js';
-
 /*
   Load and initialize the Branch SDK
    • Pass in true to use the test key, false to use the live key
@@ -22,7 +20,7 @@ export function initializeBranch(isTestMode = false) {
    • Uses the character name as the alias for the link
 */
 function shareBranchLink() {
-  const name = sharedData.getCurrentCharacter().getCharacterName();
+  const name = window.character.getCharacterName();
   var linkData = {
     alias: "test",
     data: {
