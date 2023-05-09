@@ -67,7 +67,7 @@ button {
 
 .grid {
     display: grid;   
-    grid-template-columns: 300px 300px;
+    grid-template-columns: 4500px 450px;
 }
 
 .grid-element {
