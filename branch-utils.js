@@ -29,7 +29,6 @@ function shareBranchLink() {
   };
   branch.link(linkData, function(err, link) {
     const anchorTag = document.getElementById('link');
-    anchorTag.href = link || err;
     anchorTag.innerHTML = link || err;
 });
 }
