@@ -1,3 +1,5 @@
+import {Character} from "./character.js";
+
 var marvelCharacterIds = ["620", "332", "149", "659", "717", "423", "196", "374"]; 
 var marvelElementIds = ["marvel1", "marvel2", "marvel3", "marvel4", "marvel5", "marvel6", "marvel7", "marvel8"];
 
