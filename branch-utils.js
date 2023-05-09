@@ -28,7 +28,6 @@ function shareBranchLink() {
   	}
   };
   branch.link(linkData, function(err, link) {
-    const anchorTag = document.getElementById('link');
-    anchorTag.innerHTML = link || err;
+    console.log(link);
 });
 }
