@@ -67,3 +67,7 @@ button {
 .topnav {
     overflow: hidden;
 }
+
+.grid {
+    disply: grid;   
+}
