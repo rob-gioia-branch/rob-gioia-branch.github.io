@@ -46,7 +46,7 @@ body {
     padding: 100px 100px;
 }
 
-button {
+/* button {
     background-color: #FF0030;
     color: white;
     padding: 30px;
@@ -54,7 +54,7 @@ button {
     font-size: 36px;
     width: 200px;
     height: 200px;
-} 
+}  */
 
 .sticky {
   position: fixed;
