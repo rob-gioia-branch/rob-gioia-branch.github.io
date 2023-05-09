@@ -1,5 +1,3 @@
-import * as sharedData from './shared-data.js';
-
 var marvelCharacterIds = ["620", "332", "149", "659", "717", "423", "196", "374"]; 
 var marvelElementIds = ["marvel1", "marvel2", "marvel3", "marvel4", "marvel5", "marvel6", "marvel7", "marvel8"];
 
@@ -36,7 +34,7 @@ async function loadCharacterImage(characterID, elementID) {
   const response = await fetch("https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api/id/" + characterID + ".json");
   const jsonData = await response.json();
   const character = new Character(jsonData);
-  sharedData.setCurrentCharacter(character);
+  window.character = character;
   const image = jsonData.images["lg"];
   const qrCodeImage = jsonData.images["sm"];
   const name = jsonData.name;
