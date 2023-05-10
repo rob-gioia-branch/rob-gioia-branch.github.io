@@ -6,7 +6,7 @@ export class Character {
     }
     
     getCharacterName() {
-        return name; 
+        return this.name; 
     }
     
     getCharacterImage() {
