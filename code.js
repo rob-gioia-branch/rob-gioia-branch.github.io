@@ -30,6 +30,7 @@ async function loadCharacterImages() {
     for(var i = 0; i < dcCharacterIds.length; i++) {
     await loadCharacterImage(dcCharacterIds[i], dcElementIds[i]);
   }
+  window.allCharacters = characters;
 }
 
 async function loadCharacterImage(characterID, elementID) {
