@@ -7,7 +7,10 @@ var dcElementIds = ["dc1", "dc2", "dc3", "dc4", "dc5", "dc6", "dc7", "dc8"];
 var navbar;
 var topOffset = 0;
 
-var characterData = {};
+//to store each Character object, keys are the character names
+var characterObjects = {};
+//to store each JSON object from the API call for the character
+var characterJSONs = {};
 
 function stickynavbar() {
   if (window.scrollY > topOffset) {    
@@ -38,12 +41,13 @@ async function loadCharacterImage(characterID, elementID) {
   import("/character.js").then((characterModule) => {
     const character = new characterModule.Character(jsonData);
     const name = character.getCharacterName();
-    characterData[name] = jsonData;
+    characterObjects[name] = character;
+    characterJSONs[name] = jsonData;
     window.character = character;
     const element = document.getElementById(elementID);
     element.src=character.getCharacterImage();
     element.addEventListener('click', function (e) {
-    window.character = characterData[name];
+    window.character = characterObjects[name];
     const listView = document.getElementById("list-view");
     const detailView = document.getElementById("detail-view");
     listView.hidden = true;
