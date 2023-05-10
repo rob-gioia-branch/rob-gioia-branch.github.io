@@ -70,30 +70,8 @@ function createQRCode() {
 function createAndShowJourneyBanner() {
   const name = window.character.getCharacterName();
   const qrCodeImage = window.character.getQRCodeImage();
-
-//   //close any existing journey that might be showing
-//   branch.closeJourney(function(err, data) {
-//     console.log(err, data);
-//   });
-  
-//   var linkData = {
-//   campaign: name,
-//   channel: name,
-//   alias: name,
-//   data: {
-//     '$og_title': name,
-//     '$og_description': "More info about " + name,
-//     '$og_image_url': qrCodeImage
-//   }
-// };
-  
-//   branch.setBranchViewData(linkData);  
-//   var branchJourney = document.querySelector('#branch-banner-iframe');
-//   var icon = branchJourney.querySelector('.branch-banner-icon');
-//   icon.src = qrCodeImage;
-
-     var journeyIcons =  document.querySelectorAll("[data-id='9']");
-     journeyIcons.forEach(function(img) { img.src = qrCodeImage });
+  var journeyIcons =  document.querySelectorAll("[data-id='9']");
+  journeyIcons.forEach(function(img) { img.src = qrCodeImage });
 
   //show the journey
   branch.track("pageview");
