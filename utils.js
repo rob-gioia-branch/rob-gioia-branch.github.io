@@ -1,4 +1,5 @@
 export class Utils {
+  constructor() {}
   loadCharacterDetailView() {
     window.character = characters[name];
     const listView = document.getElementById("list-view");
