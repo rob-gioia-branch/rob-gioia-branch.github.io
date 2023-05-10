@@ -53,7 +53,7 @@ async function loadCharacterImage(characterID, elementID) {
   });
     import("/branch-utils.js").then((branchUtilsModule) => {
       branchUtilsModule.createQRCode();
-    }
+    });
 });
 }
 
