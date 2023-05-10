@@ -49,7 +49,7 @@ async function loadCharacterImage(characterID, elementID) {
     const characterName = document.getElementById("character-name");
     const characterImage = document.getElementById("character-image");
     characterName.innerHTML = name;
-    characterImage.src = image;
+    characterImage.src = image; 
   });
     import("/branch-utils.js").then((branchUtilsModule) => {
       branchUtilsModule.createQRCode();
