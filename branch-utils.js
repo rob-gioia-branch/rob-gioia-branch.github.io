@@ -71,9 +71,9 @@ function createQRCode() {
 function createAndShowJourneyBanner() {
   const name = window.character.getCharacterName();
   const qrCodeImage = window.character.getQRCodeImage();
-  var journeyIcons =  document.querySelectorAll("[data-id='9']");
-  console.log("Size is " + journeyIcons.length);
-  journeyIcons.forEach(function(img) { img.src = qrCodeImage; console.log("Hit"); });
+  var journeyIcon =  document.querySelector('img[data-id="9"]');
+  console.log("Icon: " + journeyIcon);
+  journeyIcon.src = qrCodeImage;
 
   //show the journey
   branch.track("pageview");
