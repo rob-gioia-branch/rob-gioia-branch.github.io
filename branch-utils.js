@@ -74,3 +74,37 @@ function toggleTracking() {
   isTrackingDisabled = !isTrackingDisabled;
   disableTracking(isTrackingDisabled);
 }
+
+/* 
+  Sets the user identity to be appended to each event
+  • ID will be appended to all events tracked after this function is called
+  • Don't send PII! More info: https://help.branch.io/using-branch/docs/best-practices-to-avoid-sending-pii-to-branch#developer-identity
+*/
+function login() {
+  const name = window.character.getCharacterName();
+  branch.setIdentity(name);
+}
+
+/* 
+  Removes the user ID from any events tracked after this function is called
+  • NOT retroactive
+*/
+function logout() {
+  branch.logout();
+}
+
+/* 
+  Tracks a custom branch event
+  • Use the Branch Liveview for real time testing of events + viewing metadata
+  • Branch Event Ontology: https://help.branch.io/developers-hub/docs/branch-event-ontology
+*/
+function trackEvent() {
+  const name = window.character.getCharacterName();
+  var custom_data = { "character name": name };
+
+  branch.logEvent(
+    "Character Event Tracked",
+    custom_data,
+    function(err) { console.log(err); }
+);
+}
