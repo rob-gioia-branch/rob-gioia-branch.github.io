@@ -1,4 +1,4 @@
-var isTrackingDisabled = false;
+var isTrackingDisabled = false;  
 
 /*
   Load and initialize the Branch SDK
