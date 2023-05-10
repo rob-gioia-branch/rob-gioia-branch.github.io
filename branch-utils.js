@@ -31,3 +31,30 @@ function createBranchLink() {
     console.log(link);
 });
 }
+
+function createQRCode() {
+  const name = window.character.getCharacterName();
+  const qrCodeImage = window.character.getQRCodeImage();
+  
+  var qrCodeSettings = {
+    "code_color":"#000000",
+    "background_color": "#FFFFFF",
+    "margin": 5,
+    "width": 512,
+    "image_format": "png",
+    "center_logo_url": qrCodeImage
+  };
+  
+  var qrCodeLinkData = {
+      tags: [ name ],
+      channel: 'Marvel & DC Comics Superhero Website',
+      data: {
+          'name': name,
+      }
+  };
+  
+  branch.qrCode(qrCodeLinkData, qrCodeSettings, function(err, qrCode) {
+      const imageElement = document.getElementById("qr-image");
+      imageElement.src = "data:image/png;charset=utf-8;base64," + qrCode.base64();
+  });
+}
