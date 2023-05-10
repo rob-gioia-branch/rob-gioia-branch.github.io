@@ -32,6 +32,11 @@ function createBranchLink() {
 });
 }
 
+/*
+  Creates a Branch QR Code
+   • QR Code Settings - Pre-defined set of QR code related properties that works over the overall display of the QR Code. Full list of fields: https://help.branch.io/developers-hub/reference/qr-code-branch-api#qr_code_settings
+   • QR Code Link Data - The dictionary to embed link data behind the QR Code. Full list of fields: https://help.branch.io/using-branch/docs/creating-a-deep-link#section-redirections
+*/
 function createQRCode() {
   const name = window.character.getCharacterName();
   const qrCodeImage = window.character.getQRCodeImage();
