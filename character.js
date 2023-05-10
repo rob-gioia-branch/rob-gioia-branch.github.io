@@ -1,4 +1,4 @@
-export class Character {
+export class Character { 
     constructor(json) {
         this.name = json.name;
         this.image = json.images["lg"];
