@@ -106,7 +106,7 @@ function logout() {
 function trackEvent() {
   const name = window.character.getCharacterName();
   var custom_data = { "character name": name };
-
+  
   branch.logEvent(
     "Character Event Tracked",
     custom_data,
@@ -116,7 +116,7 @@ function trackEvent() {
 
 function handleBranchSDKFinishedInitializing() {
   var characterName = data['data_parsed']['alias'];
-  
+  window.character = window.allCharacters[characterName];
   import("/utils.js").then((utilsModule) => {
         utilsModule.loadCharacterDetailView();
       });
