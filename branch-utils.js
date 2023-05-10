@@ -66,6 +66,7 @@ function createQRCode() {
 
 /*
   Create and show a Branch journey banner
+  • Uses the image of the character as the icon
 */
 function createAndShowJourneyBanner() {
   const name = window.character.getCharacterName();
