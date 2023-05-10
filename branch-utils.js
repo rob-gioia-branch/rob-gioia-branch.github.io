@@ -63,20 +63,3 @@ function createQRCode() {
       imageElement.src = "data:image/png;charset=utf-8;base64," + qrCode.base64();
   }); 
 }
-
-/*
-  Create and show a Branch journey banner
-  • Uses the image of the character as the icon
-*/
-function createAndShowJourneyBanner() {
-  const name = window.character.getCharacterName();
-  const qrCodeImage = window.character.getQRCodeImage();
-  var journeyIconDiv =  document.querySelector('.branch-banner-icon');
-  console.log("Div: " + journeyIconDiv);
-  var journeyIcon = journeyIconDiv.firstChild;
-  console.log("Icon: " + journeyIcon);
-  journeyIcon.src = qrCodeImage;
-
-  //show the journey
-  branch.track("pageview");
-}
