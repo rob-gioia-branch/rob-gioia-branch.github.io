@@ -71,23 +71,23 @@ function createAndShowJourneyBanner() {
   const name = window.character.getCharacterName();
   const qrCodeImage = window.character.getQRCodeImage();
 
-  //close any existing journey that might be showing
-  branch.closeJourney(function(err, data) {
-    console.log(err, data);
-  });
+//   //close any existing journey that might be showing
+//   branch.closeJourney(function(err, data) {
+//     console.log(err, data);
+//   });
   
-  var linkData = {
-  campaign: name,
-  channel: name,
-  alias: name,
-  data: {
-    '$og_title': name,
-    '$og_description': "More info about " + name,
-    '$og_image_url': qrCodeImage
-  }
-};
+//   var linkData = {
+//   campaign: name,
+//   channel: name,
+//   alias: name,
+//   data: {
+//     '$og_title': name,
+//     '$og_description': "More info about " + name,
+//     '$og_image_url': qrCodeImage
+//   }
+// };
   
-  branch.setBranchViewData(linkData);  
+//   branch.setBranchViewData(linkData);  
   branchJourneyIcon = document.getElementsByClassName("branch-banner-icon");
   branchJourneyIcon.src = qrCodeImage;
 
