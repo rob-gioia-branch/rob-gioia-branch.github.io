@@ -2,7 +2,7 @@ var marvelCharacterIds = ["620", "332", "149", "659", "717", "423", "196", "374"
 var marvelElementIds = ["marvel1", "marvel2", "marvel3", "marvel4", "marvel5", "marvel6", "marvel7", "marvel8"];
 
 var dcCharacterIds = ["70", "644", "298", "266", "370", "514", "558", "63"];
-var dcElementIds = ["dc1", "dc2", "dc3", "dc4", "dc5", "dc6", "dc7", "dc8"];
+var dcElementIds = ["dc1", "dc2", "dc3", "dc4", "dc5", "dc6", "dc7", "dc8"]; 
 
 var navbar;
 var topOffset = 0;
