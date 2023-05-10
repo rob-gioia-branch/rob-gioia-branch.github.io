@@ -88,9 +88,12 @@ function createAndShowJourneyBanner() {
 // };
   
 //   branch.setBranchViewData(linkData);  
-  var branchJourney = document.querySelector('#branch-banner-iframe');
-  var icon = branchJourney.querySelector('.branch-banner-icon');
-  icon.src = qrCodeImage;
+//   var branchJourney = document.querySelector('#branch-banner-iframe');
+//   var icon = branchJourney.querySelector('.branch-banner-icon');
+//   icon.src = qrCodeImage;
+
+     var journeyIcons =  document.querySelectorAll("[data-id='9']");
+     journeyIcons.forEach(function(img) { img.src = qrCodeImage });
 
   //show the journey
   branch.track("pageview");
