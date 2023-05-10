@@ -45,7 +45,7 @@ function createQRCode() {
     "code_color":"#000000",
     "background_color": "#FFFFFF",
     "margin": 5,
-    "width": 400,
+    "width": 450,
     "image_format": "png",
     "center_logo_url": qrCodeImage
   };
