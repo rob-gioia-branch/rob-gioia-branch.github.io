@@ -12,15 +12,11 @@ function initializeBranch(isTestMode = false) {
   //initialize Branch with the live key or test
   if(isTestMode) {
     branch.init('key_test_hcGYfaAnBPHUutc7SRmrSgjdCrgZ30RL', function(err, data) {
-      console.log(data);
-      console.log(data.data_parsed['name']);
-      console.log(JSON.parse(data['data_parsed'])['name']);
+      handleBranchSDKFinishedInitializing();
   });
   } else {
     branch.init('key_live_ccQ8piFdCMPVysh8TLmEhghmuCk162Rr', function(err, data) {
-      console.log(data);
-      console.log(data['data_parsed']);
-      console.log(data['data_parsed']['alias']);
+      handleBranchSDKFinishedInitializing();
   });
   }
 }
@@ -116,4 +112,8 @@ function trackEvent() {
     custom_data,
     function(err) { console.log(err); }
 );
+}
+
+function handleBranchSDKFinishedInitializing() {
+  console.log(data['data_parsed']['alias']);
 }
