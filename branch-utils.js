@@ -31,7 +31,7 @@ function createBranchLink() {
     alias: name,
     data: {
     'name': name,
-    '$default_url': 'https://rob-gioia-branch.github.io/'  
+    '$desktop_url': 'https://rob-gioia-branch.github.io/'  
   	}
   };
   branch.link(linkData, function(err, link) {
