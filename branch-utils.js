@@ -88,8 +88,9 @@ function createAndShowJourneyBanner() {
 // };
   
 //   branch.setBranchViewData(linkData);  
-  branchJourneyIcons = document.getElementsByClassName("branch-banner-icon");
-  branchJourneyIcons[0].src = qrCodeImage;
+  var branchJourney = document.querySelector('#branch-banner-iframe');
+  var icon = branchJourney.querySelector('.branch-banner-icon');
+  icon.src = qrCodeImage;
 
   //show the journey
   branch.track("pageview");
