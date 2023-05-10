@@ -7,6 +7,8 @@ var dcElementIds = ["dc1", "dc2", "dc3", "dc4", "dc5", "dc6", "dc7", "dc8"];
 var navbar;
 var topOffset = 0;
 
+var characterData = {};
+
 function stickynavbar() {
   if (window.scrollY > topOffset) {    
     navbar.classList.add('sticky');
@@ -35,6 +37,7 @@ async function loadCharacterImage(characterID, elementID) {
   const jsonData = await response.json();
   import("/character.js").then((characterModule) => {
     const character = new characterModule.Character(jsonData);
+    characterData[character.getCharacterName()] = character;
     window.character = character;
     const image = jsonData.images["lg"];
     const qrCodeImage = jsonData.images["sm"];
@@ -42,6 +45,7 @@ async function loadCharacterImage(characterID, elementID) {
     const element = document.getElementById(elementID);
     element.src=image;
     element.addEventListener('click', function (e) {
+    window.character = characterData[name];
     const listView = document.getElementById("list-view");
     const detailView = document.getElementById("detail-view");
     listView.hidden = true;
