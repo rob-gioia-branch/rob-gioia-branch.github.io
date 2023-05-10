@@ -20,7 +20,7 @@ function initializeBranch(isTestMode = false) {
     branch.init('key_live_ccQ8piFdCMPVysh8TLmEhghmuCk162Rr', function(err, data) {
       console.log(data);
       console.log(data['data_parsed']);
-      console.log(data['alias']);
+      console.log(data['data_parsed']['alias']);
   });
   }
 }
