@@ -37,13 +37,11 @@ async function loadCharacterImage(characterID, elementID) {
   const jsonData = await response.json();
   import("/character.js").then((characterModule) => {
     const character = new characterModule.Character(jsonData);
-    characterData[character.getCharacterName()] = character;
+    const name = character.getCharacterName();
+    characterData[name] = jsonData;
     window.character = character;
-    const image = jsonData.images["lg"];
-    const qrCodeImage = jsonData.images["sm"];
-    const name = jsonData.name;
     const element = document.getElementById(elementID);
-    element.src=image;
+    element.src=character.getCharacterImage();
     element.addEventListener('click', function (e) {
     window.character = characterData[name];
     const listView = document.getElementById("list-view");
@@ -53,7 +51,7 @@ async function loadCharacterImage(characterID, elementID) {
     const characterName = document.getElementById("character-name");
     const characterImage = document.getElementById("character-image");
     characterName.innerHTML = name;
-    characterImage.src = image; 
+    characterImage.src = .getCharacterImage(); 
   });
 });
 }
