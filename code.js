@@ -51,9 +51,6 @@ async function loadCharacterImage(characterID, elementID) {
     characterName.innerHTML = name;
     characterImage.src = image; 
   });
-    import("/branch-utils.js").then((branchUtilsModule) => {
-      branchUtilsModule.createQRCode();
-    });
 });
 }
 
