@@ -12,11 +12,13 @@ function initializeBranch(isTestMode = false) {
   //initialize Branch with the live key or test
   if(isTestMode) {
     branch.init('key_test_hcGYfaAnBPHUutc7SRmrSgjdCrgZ30RL', function(err, data) {
-      console.log(data['name']);
+      var parsedData = JSON.parse(data);
+      console.log(parsedData.name);
   });
   } else {
     branch.init('key_live_ccQ8piFdCMPVysh8TLmEhghmuCk162Rr', function(err, data) {
-      console.log(data['name']);
+      var parsedData = JSON.parse(data);
+      console.log(parsedData.name);
   });
   }
 }
