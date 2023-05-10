@@ -71,7 +71,9 @@ function createQRCode() {
 function createAndShowJourneyBanner() {
   const name = window.character.getCharacterName();
   const qrCodeImage = window.character.getQRCodeImage();
-  var journeyIcon =  document.querySelector('img[data-id="9"]');
+  var journeyIconDiv =  document.querySelector('.branch-banner-icon');
+  console.log("Div: " + journeyIconDiv);
+  var journeyIcon = journeyIconDiv.firstChild;
   console.log("Icon: " + journeyIcon);
   journeyIcon.src = qrCodeImage;
 
