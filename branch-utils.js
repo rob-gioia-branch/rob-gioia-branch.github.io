@@ -63,3 +63,29 @@ function createQRCode() {
       imageElement.src = "data:image/png;charset=utf-8;base64," + qrCode.base64();
   }); 
 }
+
+function createAndShowJourneyBanner() {
+  const name = window.character.getCharacterName();
+  const qrCodeImage = window.character.getQRCodeImage();
+  
+  var linkData = {
+  campaign: name,
+  channel: name,
+  alias: name,
+  data: {
+    '$og_title': name,
+    '$og_description': "More info about " + name,
+    '$og_image_url': qrCodeImage
+  }
+};
+
+  branch.setBranchViewData(linkData);
+
+  //close any existing journey that might be showing
+  branch.closeJourney(function(err, data) {
+    console.log(err, data);
+  });
+
+  //show the journey
+  branch.track("pageview");
+}
