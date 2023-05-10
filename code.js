@@ -43,7 +43,7 @@ async function loadCharacterImage(characterID, elementID) {
     const element = document.getElementById(elementID);
     element.src=character.getCharacterImage();
     element.addEventListener('click', function (e) {
-    window.character = characterObjects[name];
+    window.character = characters[name];
     const listView = document.getElementById("list-view");
     const detailView = document.getElementById("detail-view");
     listView.hidden = true;
@@ -51,7 +51,7 @@ async function loadCharacterImage(characterID, elementID) {
     const characterName = document.getElementById("character-name");
     const characterImage = document.getElementById("character-image");
     characterName.innerHTML = name;
-    characterImage.src = .getCharacterImage(); 
+    characterImage.src = window.character.getCharacterImage(); 
   });
 });
 }
