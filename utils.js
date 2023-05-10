@@ -1,6 +1,4 @@
-export class Utils {
-  constructor() {}
-  loadCharacterDetailView() {
+export function loadCharacterDetailView() {
     window.character = characters[name];
     const listView = document.getElementById("list-view");
     const detailView = document.getElementById("detail-view");
@@ -10,5 +8,4 @@ export class Utils {
     const characterImage = document.getElementById("character-image");
     characterName.innerHTML = name;
     characterImage.src = window.character.getCharacterImage();
-  }
 }
