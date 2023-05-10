@@ -85,10 +85,10 @@ function createAndShowJourneyBanner() {
 
   branch.setBranchViewData(linkData);  
 
-//   //close any existing journey that might be showing
-//   branch.closeJourney(function(err, data) {
-//     console.log(err, data);
-//   });
+  //close any existing journey that might be showing
+  branch.closeJourney(function(err, data) {
+    console.log(err, data);
+  });
 
   //show the journey
   branch.track("pageview");
