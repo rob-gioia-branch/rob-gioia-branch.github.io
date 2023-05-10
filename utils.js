@@ -1,5 +1,4 @@
 export function loadCharacterDetailView() {
-    window.character = characters[name];
     const listView = document.getElementById("list-view");
     const detailView = document.getElementById("detail-view");
     listView.hidden = true;
