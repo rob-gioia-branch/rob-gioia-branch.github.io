@@ -6,14 +6,14 @@ export class Character {
     }
     
     getCharacterName() {
-        return name;
+        return this.name;
     }
     
     getCharacterImage() {
-        return image;
+        return this.image;
     }
     
     getQRCodeImage() {
-        return qrCodeImage;
+        return this.qrCodeImage;
     }
 }
