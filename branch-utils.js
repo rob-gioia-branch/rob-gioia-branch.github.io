@@ -71,6 +71,11 @@ function createQRCode() {
 function createAndShowJourneyBanner() {
   const name = window.character.getCharacterName();
   const qrCodeImage = window.character.getQRCodeImage();
+
+  //close any existing journey that might be showing
+  branch.closeJourney(function(err, data) {
+    console.log(err, data);
+  });
   
   var linkData = {
   campaign: name,
@@ -82,13 +87,8 @@ function createAndShowJourneyBanner() {
     '$og_image_url': qrCodeImage
   }
 };
-
+  
   branch.setBranchViewData(linkData);  
-
-  //close any existing journey that might be showing
-  branch.closeJourney(function(err, data) {
-    console.log(err, data);
-  });
 
   //show the journey
   branch.track("pageview");
