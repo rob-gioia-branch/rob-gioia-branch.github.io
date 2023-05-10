@@ -19,8 +19,8 @@ function initializeBranch(isTestMode = false) {
   } else {
     branch.init('key_live_ccQ8piFdCMPVysh8TLmEhghmuCk162Rr', function(err, data) {
       console.log(data);
-      console.log(data.data_parsed['name']);
-      console.log(JSON.parse(data['data_parsed'])['name']);
+      console.log(data['data_parsed']);
+      console.log(data['alias']);
   });
   }
 }
