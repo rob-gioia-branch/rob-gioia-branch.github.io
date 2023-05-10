@@ -79,7 +79,7 @@ function createAndShowJourneyBanner() {
   }
 };
 
-  branch.setBranchViewData(linkData);
+  branch.setBranchViewData(linkData);  
 
   //close any existing journey that might be showing
   branch.closeJourney(function(err, data) {
