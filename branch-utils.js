@@ -115,5 +115,9 @@ function trackEvent() {
 }
 
 function handleBranchSDKFinishedInitializing() {
-  console.log(data['data_parsed']['alias']);
+  var characterName = data['data_parsed']['alias'];
+  
+  import("/utils.js").then((utilsModule) => {
+        utilsModule.loadCharacterDetailView();
+      });
 }
