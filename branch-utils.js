@@ -56,5 +56,5 @@ function createQRCode() {
   branch.qrCode(qrCodeLinkData, qrCodeSettings, function(err, qrCode) {
       const imageElement = document.getElementById("qr-image");
       imageElement.src = "data:image/png;charset=utf-8;base64," + qrCode.base64();
-  });
+  }); 
 }
