@@ -44,6 +44,7 @@ async function loadCharacterImage(characterID, elementID) {
     const element = document.getElementById(elementID);
     element.src=character.getCharacterImage();
     element.addEventListener('click', function (e) {
+      window.character = characters[name];
       import("/utils.js").then((utilsModule) => {
         utilsModule.loadCharacterDetailView();
       });
