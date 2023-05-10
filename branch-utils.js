@@ -1,3 +1,5 @@
+var isTrackingDisabled = false;
+
 /*
   Load and initialize the Branch SDK
    • Pass in true to use the test key, false to use the live key
@@ -62,4 +64,13 @@ function createQRCode() {
       const imageElement = document.getElementById("qr-image");
       imageElement.src = "data:image/png;charset=utf-8;base64," + qrCode.base64();
   }); 
+}
+
+/* 
+  Toggles user tracking
+  • More info: https://help.branch.io/developers-hub/docs/web-advanced-features#enable--disable-user-tracking
+*/
+function toggleTracking() {
+  isTrackingDisabled = !isTrackingDisabled;
+  disableTracking(isTrackingDisabled);
 }
