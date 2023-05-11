@@ -3,7 +3,6 @@ export class Character {
         this.name = json.name;
         this.image = json.images["lg"];
         this.qrCodeImage = json.images["sm"];
-        this.data = json;
     }
     
     getCharacterName() {
@@ -16,9 +15,5 @@ export class Character {
     
     getQRCodeImage() {
         return this.qrCodeImage;
-    }
-    
-    getCharacterData() {
-        return this.data;   
     }
 }
