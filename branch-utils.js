@@ -114,12 +114,21 @@ function trackEvent() {
 );
 }
 
+/* 
+  Code to be run after the Branch SDK finishes loading, handles deep link routing
+  • If app.link - uses the name to route the user to the detail view for that character
+  • If bnc.lt - uses the alias to route the user to the detail view for that character
+*/
 function handleBranchSDKFinishedInitializing(data) {
-  console.log(data);
-  var characterName = data['data_parsed']['alias'];
+  var referringLink = data['data_parsed']['~referring_link'];
+  var characterName = "";
+  if(referringLink.includes("app.link") {
+    characterName = data['data_parsed']['name'];
+  } else {
+    characterName = data['data_parsed']['alias'];
+  }
   window.character = window.allCharacters[characterName];
   import("/utils.js").then((utilsModule) => {
-        console.log("Loading detail view");
         utilsModule.loadCharacterDetailView();
       });
 }
