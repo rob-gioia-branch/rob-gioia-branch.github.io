@@ -122,7 +122,7 @@ function trackEvent() {
 function handleBranchSDKFinishedInitializing(data) {
   var referringLink = data['data_parsed']['~referring_link'];
   var characterName = "";
-  if(referringLink.includes("app.link") {
+  if(referringLink.includes("app.link")) {
     characterName = data['data_parsed']['name'];
   } else {
     characterName = data['data_parsed']['alias'];
