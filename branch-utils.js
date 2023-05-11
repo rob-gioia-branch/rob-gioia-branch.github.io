@@ -12,11 +12,11 @@ function initializeBranch(isTestMode = false) {
   //initialize Branch with the live key or test
   if(isTestMode) {
     branch.init('key_test_hcGYfaAnBPHUutc7SRmrSgjdCrgZ30RL', function(err, data) {
-      handleBranchSDKFinishedInitializing();
+      handleBranchSDKFinishedInitializing(data);
   });
   } else {
     branch.init('key_live_ccQ8piFdCMPVysh8TLmEhghmuCk162Rr', function(err, data) {
-      handleBranchSDKFinishedInitializing();
+      handleBranchSDKFinishedInitializing(data);
   });
   }
 }
@@ -114,7 +114,7 @@ function trackEvent() {
 );
 }
 
-function handleBranchSDKFinishedInitializing() {
+function handleBranchSDKFinishedInitializing(data) {
   console.log("hit 1");
   var characterName = data['data_parsed']['alias'];
   console.log("Name: " + characterName);
