@@ -150,9 +150,6 @@ function handleDeepLinkRouting(data) {
   • Full list of journeys lifecycle events: https://help.branch.io/faq/docs/is-there-a-way-to-set-up-a-listener-function-to-listen-to-events
 */
 function addJourneyLifecycleEventListener() {
-   console.log("hit 1");
-   var listener = function(event, data) { console.log("hit 2"); console.log(event, data); console.log("hit 3");}
-   console.log("hit 4");
+   var listener = function(event, data) { console.log(event, data); }
    branch.addListener(listener);
-   console.log("hit 5");
 }
