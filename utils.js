@@ -5,6 +5,6 @@ export function loadCharacterDetailView() {
     detailView.hidden = false;
     const characterName = document.getElementById("character-name");
     const characterImage = document.getElementById("character-image");
-    characterName.innerHTML = name;
+    characterName.innerHTML = window.character.getCharacterName();
     characterImage.src = window.character.getCharacterImage();
 }
