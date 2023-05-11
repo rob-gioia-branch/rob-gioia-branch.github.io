@@ -79,7 +79,7 @@ function createQRCode() {
 */
 function toggleTracking() {
   isTrackingDisabled = !isTrackingDisabled;
-  disableTracking(isTrackingDisabled);
+  branch.disableTracking(isTrackingDisabled);
 }
 
 /* 
@@ -131,7 +131,7 @@ function handleBranchSDKFinishedInitializing(data) {
   • If bnc.lt - uses the alias to route the user to the detail view for that character
 */
 function handleDeepLinkRouting(data) {
-    var referringLink = data['data_parsed']['~referring_link'];
+  var referringLink = data['data_parsed']['~referring_link'];
   var characterName = "";
   if(referringLink.includes("app.link")) {
     characterName = data['data_parsed']['name'];
