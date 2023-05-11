@@ -116,7 +116,7 @@ function trackEvent() {
   branch.logEvent(
     "Character Event Tracked",
     JSON.stringify(custom_data),
-    function(err) { console.log("Event Logged: " + "Name: " + "Character Event Tracked", custom_data, "Error: " + err); }
+    function(err) { console.log("Event Logged: " + "Name: " + "Character Event Tracked", JSON.stringify(custom_data), "Error: " + err); }
 );
 }
 
