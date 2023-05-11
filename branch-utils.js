@@ -80,6 +80,8 @@ function createQRCode() {
 function toggleTracking() {
   isTrackingDisabled = !isTrackingDisabled;
   branch.disableTracking(isTrackingDisabled);
+  var trackingState = isTrackingDisabled ? "disabled" : "enabled";
+  console.log("Tracking has been " + trackingState);
 }
 
 /* 
