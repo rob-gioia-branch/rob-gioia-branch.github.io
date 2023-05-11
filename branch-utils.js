@@ -115,9 +115,14 @@ function trackEvent() {
 }
 
 function handleBranchSDKFinishedInitializing() {
+  console.log("hit 1");
   var characterName = data['data_parsed']['alias'];
+  console.log("Name: " + characterName);
   window.character = window.allCharacters[characterName];
+  console.log("Character: " + window.character);
+  console.log("Characters: " + window.allCharacters.length);
   import("/utils.js").then((utilsModule) => {
+        console.log("Loading detail view");
         utilsModule.loadCharacterDetailView();
       });
 }
