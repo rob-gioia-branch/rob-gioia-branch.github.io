@@ -115,12 +115,21 @@ function trackEvent() {
 }
 
 /* 
-  Code to be run after the Branch SDK finishes loading, handles deep link routing
+  Code to be run after the Branch SDK finishes loading
+  • Encapsulating into a function since the init for the live and test keys have seperate callbacks
+*/
+function handleBranchSDKFinishedInitializing(data) {
+  handleDeepLinkRouting(data);
+  addJourneyLifecycleEventListener();
+}
+
+/* 
+  Handles deep link routing when a Branch link is clicked
   • If app.link - uses the name to route the user to the detail view for that character
   • If bnc.lt - uses the alias to route the user to the detail view for that character
 */
-function handleBranchSDKFinishedInitializing(data) {
-  var referringLink = data['data_parsed']['~referring_link'];
+function handleDeepLinkRouting(data) {
+    var referringLink = data['data_parsed']['~referring_link'];
   var characterName = "";
   if(referringLink.includes("app.link")) {
     characterName = data['data_parsed']['name'];
@@ -131,4 +140,14 @@ function handleBranchSDKFinishedInitializing(data) {
   import("/utils.js").then((utilsModule) => {
         utilsModule.loadCharacterDetailView();
       });
+}
+
+/* 
+  Listens for Branch journeys events
+  • Logs the event and data to the console
+  • Full list of journeys lifecycle events: https://help.branch.io/faq/docs/is-there-a-way-to-set-up-a-listener-function-to-listen-to-events
+*/
+function addJourneyLifecycleEventListener() {
+   var listener = function(event, data) { console.log(event, data); }
+   branch.addListener(listener);
 }
