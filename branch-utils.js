@@ -90,6 +90,7 @@ function toggleTracking() {
 function login() {
   const name = window.character.getCharacterName();
   branch.setIdentity(name);
+  console.log("User has been logged in as " + name);
 }
 
 /* 
@@ -98,6 +99,7 @@ function login() {
 */
 function logout() {
   branch.logout();
+  console.log("User has been logged out");
 }
 
 /* 
@@ -112,7 +114,7 @@ function trackEvent() {
   branch.logEvent(
     "Character Event Tracked",
     custom_data,
-    function(err) { console.log(err); }
+    function(err) { console.log("Event Logged: " + "Name: " + "Character Event Tracked", custom_data, "Error: " + err); }
 );
 }
 
