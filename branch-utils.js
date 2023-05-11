@@ -114,7 +114,7 @@ function trackEvent() {
   var custom_data = { "character name": name };
   
   branch.logEvent(
-    "Before",
+    "Character Event Tracked",
     JSON.stringify(custom_data),
     function(err) { console.log("Event Logged: " + "Name: " + "Character Event Tracked", JSON.stringify(custom_data), "Error: " + err); }
 );
