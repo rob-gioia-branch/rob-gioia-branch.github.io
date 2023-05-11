@@ -1,5 +1,5 @@
 // var marvelCharacterIds = ["620", "332", "149", "659", "717", "423", "196", "374"]; 
-var marvelCharacterIds = ["1", "2", "3", "4", "5", "6", "7", "8"]; 
+var marvelCharacterIds = ["13", "18", "23", "24", "5", "6", "7", "8"]; 
 var marvelElementIds = ["marvel1", "marvel2", "marvel3", "marvel4", "marvel5", "marvel6", "marvel7", "marvel8"];
 
 var dcCharacterIds = ["70", "644", "298", "266", "370", "514", "558", "63"];
