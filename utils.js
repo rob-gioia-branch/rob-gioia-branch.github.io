@@ -1,5 +1,4 @@
 export function loadCharacterDetailView() {
-    console.log("hit 2");
     const listView = document.getElementById("list-view");
     const detailView = document.getElementById("detail-view");
     listView.hidden = true;
@@ -8,5 +7,4 @@ export function loadCharacterDetailView() {
     const characterImage = document.getElementById("character-image");
     characterName.innerHTML = name;
     characterImage.src = window.character.getCharacterImage();
-    console.log("hit 3");
 }
