@@ -1,1 +1,71 @@
-
+<!DOCTYPE html>
+<html> 
+  <head>
+    <title> Marvel & DC Comics Superheroes </title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="code.js"></script>
+    <script src="branch-utils.js"></script>
+    <script type="module" src="character.js"></script>
+    <script type="module" src="utils.js"></script>
+    <meta http-equiv='cache-control' content='no-cache'> 
+    <meta http-equiv='expires' content='0'> 
+    <meta http-equiv='pragma' content='no-cache'>
+    <meta name="branch:deeplink:$deeplink_path" content="Green Arrow" />
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TTTJCNV');</script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body onload = "loadCharacterImages()">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTTJCNV"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div id="topnav" class="topnav"> 
+      <div class="branch-journeys-top" style="display:none;"></div>
+      <a id="home" class="active" href="javascript:void(0);" onclick="reloadHomepage()">Home</a>
+      <a id="marvel" href="#marvel-head">Marvel</a>
+      <a id="dc" href="#dc-head">DC</a>
+    </div>
+    <div id="list-view">
+      <h2 id="marvel-head" class="marvel-head">Marvel</h2>
+      <div id="marvel-body">
+        <img src='not_found.jpg' id="marvel1">
+        <img src='not_found.jpg' id="marvel2">
+        <img src='not_found.jpg' id="marvel3">
+        <img src='not_found.jpg' id="marvel4">
+        <img src='not_found.jpg' id="marvel5">
+        <img src='not_found.jpg' id="marvel6">
+        <img src='not_found.jpg' id="marvel7">
+        <img src='not_found.jpg' id="marvel8">
+      </div>
+      <h2 id="dc-head" class="dc-head">DC</h2>
+      <div id="dc-body">
+        <img src='not_found.jpg' id="dc1">
+        <img src='not_found.jpg' id="dc2">
+        <img src='not_found.jpg' id="dc3">
+        <img src='not_found.jpg' id="dc4">
+        <img src='not_found.jpg' id="dc5">
+        <img src='not_found.jpg' id="dc6">
+        <img src='not_found.jpg' id="dc7">
+        <img src='not_found.jpg' id="dc8">
+      </div>
+    </div>
+    <div id="detail-view" hidden> 
+      <h1 id="character-name" class="dc-head"></h1>
+      <img src='' id="character-image">
+      <img src='' id="qr-image">
+      <div class="grid"> 
+        <div><button class="grid-element" onclick="createBranchLink()">Create Deeplink</button></div>
+        <div><button class="grid-element" onclick="login()">Login</button></div>
+        <div><button class="grid-element" onclick="logout()">Logout</button></div>
+        <div><button class="grid-element" onclick="trackEvent()">Track Event</button></div>
+        <div><button class="grid-element" onclick="toggleTracking()">Toggle Tracking</button></div>
+        <div><button class="grid-element" onclick="createQRCode()">QR Code</button></div>
+      </div>
+    </div>
+  </body>
+</html>
