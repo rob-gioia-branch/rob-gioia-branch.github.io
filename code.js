@@ -73,13 +73,12 @@ async function loadCharacterImage(characterID, elementID) {
     const character = new characterModule.Character(jsonData);
     const name = character.getCharacterName();
     characters[name] = character;
-    window.character = character;
     let element = document.getElementById(elementID);
     element.src=character.getCharacterImage();
     element.addEventListener('click', function (e) {
       window.character = characters[name];
       import("/utils.js").then((utilsModule) => {
-        utilsModule.loadCharacterDetailView(window.character);
+        utilsModule.loadCharacterDetailView();
       });
   });
 });
