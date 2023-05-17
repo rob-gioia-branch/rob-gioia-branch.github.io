@@ -9,6 +9,12 @@ var topOffset = 0;
 
 var characters = {};
 
+var homeNavButton = document.getElementById("home");
+var marvelNavButton = document.getElementById("marvel");
+var dcNavButton = document.getElementById("dc");
+
+var listOfNavButtons = [homeNavButton, marvelNavButton, dcNavButton];
+
 function stickynavbar() {
   if (window.scrollY > topOffset) {    
     navbar.classList.add('sticky');
@@ -17,26 +23,35 @@ function stickynavbar() {
   }
 }
 
+function setNavButtonActive(navButton) {
+  for(var i = 0; i < listOfNavButtons.length; i++) {
+    currentButton = listOfNavButtons[i];
+    if(navButton == listOfNavButtons[i]) {
+      currentButton.classList.add('active');
+    } else {
+      currentButton.classList.remove('active');
+    }
+  }
+}
+
 function handleHomeButtonClicked() {
+  showListView();
+  setNavButtonActive("home");
+}
+
+function showListView() {
   const listView = document.getElementById("list-view");
   const detailView = document.getElementById("detail-view");
   listView.hidden = false;
   detailView.hidden = true;
-  document.getElementById("home").classList.add('active');
-  document.getElementById("marvel").classList.remove('active');
-  document.getElementById("dc").classList.remove('active');
 }
 
 function handleMarvelButtonClicked() {
-  document.getElementById("marvel").classList.add('active');
-  document.getElementById("home").classList.remove('active');
-  document.getElementById("dc").classList.remove('active');
+  setNavButtonActive("marvel");
 }
 
 function handleDCButtonClicked() {
-  document.getElementById("dc").classList.add('active');
-  document.getElementById("home").classList.remove('active');
-  document.getElementById("marvel").classList.remove('active');
+  setNavButtonActive("dc");
 }
 
 async function loadCharacterImages() {
