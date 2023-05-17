@@ -27,7 +27,7 @@ async function loadCharacterImages() {
   for(var i = 0; i < marvelCharacterIds.length; i++) {
     await loadCharacterImage(marvelCharacterIds[i], marvelElementIds[i]);
   }
-    for(var i = 0; i < dcCharacterIds.length - 1; i++) {
+    for(var i = 0; i < dcCharacterIds.length; i++) {
     await loadCharacterImage(dcCharacterIds[i], dcElementIds[i]);
   }
   window.allCharacters = characters;
@@ -56,6 +56,7 @@ async function loadCharacterImage(characterID, elementID) {
 function onDocumentLoaded() {
   navbar = document.getElementById('topnav');
   topOffset = navbar.offsetTop;
+  loadCharacterImages();
 }
 
 window.addEventListener('scroll', stickynavbar);
