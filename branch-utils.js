@@ -134,6 +134,7 @@ function handleDeepLinkRouting(data) {
   if(data === undefined || data === "") { return; } //if a Branch link was not clicked we can return since we don't need to deep link
   console.log(data);
   var referringLink = data['data_parsed']['~referring_link'];
+  if(referringLink === undefined) { return; } //if a Branch link was not clicked we can return since we don't need to deep link
   var characterName = "";
   if(referringLink.includes("app.link")) {
     characterName = data['data_parsed']['name'];
