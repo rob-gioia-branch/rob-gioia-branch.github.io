@@ -125,15 +125,9 @@ function trackEvent() {
   • Encapsulating into a function since the init for the live and test keys have seperate callbacks
 */
 function handleBranchSDKFinishedInitializing(data) {
-  if(data == null) {
     branch.data(function(err, data) {
       handleDeepLinkRouting(data);
-      addJourneyLifecycleEventListener();
     });
-  } else {
-      handleDeepLinkRouting(data);
-      addJourneyLifecycleEventListener();
-  }
 }
 
 /* 
