@@ -31,7 +31,6 @@ async function loadCharacterImages() {
     await loadCharacterImage(dcCharacterIds[i], dcElementIds[i]);
   }
   window.allCharacters = characters;
-  initializeBranch();
 }
 
 async function loadCharacterImage(characterID, elementID) {
