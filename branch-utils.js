@@ -131,7 +131,7 @@ function trackEvent() {
   • If bnc.lt - uses the alias to route the user to the detail view for that character
 */
 function handleDeepLinkRouting(data) {
-  if(data == undefined) { return; } //if a Branch link was not clicked we can return since we don't need to deep link
+  if(data === undefined || data === "") { return; } //if a Branch link was not clicked we can return since we don't need to deep link
   console.log(data);
   var referringLink = data['data_parsed']['~referring_link'];
   var characterName = "";
