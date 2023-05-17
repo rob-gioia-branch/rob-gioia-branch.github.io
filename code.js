@@ -31,6 +31,7 @@ async function loadCharacterImages() {
     await loadCharacterImage(dcCharacterIds[i], dcElementIds[i]);
   }
   window.allCharacters = characters;
+  console.log("Load images finished");
 }
 
 async function loadCharacterImage(characterID, elementID) {
