@@ -9,11 +9,11 @@ var topOffset = 0;
 
 var characters = {};
 
-var homeNavButton = document.getElementById("home");
-var marvelNavButton = document.getElementById("marvel");
-var dcNavButton = document.getElementById("dc");
+var homeNavButton;
+var marvelNavButton;
+var dcNavButton;
 
-var listOfNavButtons = [homeNavButton, marvelNavButton, dcNavButton];
+var listOfNavButtons;
 
 function stickynavbar() {
   if (window.scrollY > topOffset) {    
@@ -86,6 +86,12 @@ async function loadCharacterImage(characterID, elementID) {
 
 function onDocumentLoaded() {
   navbar = document.getElementById('topnav');
+  homeNavButton = document.getElementById("home");
+  marvelNavButton = document.getElementById("marvel");
+  dcNavButton = document.getElementById("dc");
+}
+
+var listOfNavButtons = [homeNavButton, marvelNavButton, dcNavButton];
   topOffset = navbar.offsetTop;
   loadCharacterImages();
 }
