@@ -125,17 +125,15 @@ function trackEvent() {
   • Encapsulating into a function since the init for the live and test keys have seperate callbacks
 */
 function handleBranchSDKFinishedInitializing(data) {
-  if(data == null) {
-    console.log("Data was null");
-    branch.data(function(err, data) {
-      handleDeepLinkRouting(data);
-      addJourneyLifecycleEventListener();
-    });
-  } else {
-      console.log("Data was not null");
-      handleDeepLinkRouting(data);
-      addJourneyLifecycleEventListener();
-  }
+//   if(data == null) {
+//     console.log("Data was null");
+//     branch.data(function(err, data) {
+//       handleDeepLinkRouting(data);
+//     });
+//   } else {
+//       console.log("Data was not null");
+         handleDeepLinkRouting(data);
+//   }
 }
 
 /* 
@@ -144,6 +142,7 @@ function handleBranchSDKFinishedInitializing(data) {
   • If bnc.lt - uses the alias to route the user to the detail view for that character
 */
 function handleDeepLinkRouting(data) {
+  console.log(data);
   var referringLink = data['data_parsed']['~referring_link'];
   var characterName = "";
   if(referringLink.includes("app.link")) {
