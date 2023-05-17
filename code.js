@@ -12,8 +12,8 @@ var characters = {};
 var homeNavButton;
 var marvelNavButton;
 var dcNavButton;
-
-var listOfNavButtons =["home", "marvel", "dc"];
+var listOfNavButtons;
+var listOfNavButtonNames =["home", "marvel", "dc"];
 
 function stickynavbar() {
   if (window.scrollY > topOffset) {    
@@ -26,7 +26,7 @@ function stickynavbar() {
 function setNavButtonActive(navButton) {
   for(var i = 0; i < listOfNavButtons.length; i++) {
     currentButton = listOfNavButtons[i];
-    if(navButton == listOfNavButtons[i]) {
+    if(navButton === listOfNavButtons[i]) {
       currentButton.classList.add('active');
     } else {
       currentButton.classList.remove('active');
@@ -36,15 +36,15 @@ function setNavButtonActive(navButton) {
 
 function handleHomeButtonClicked() {
   showListView();
-  setNavButtonActive("home");
+  setNavButtonActive(homeNavButton);
 }
 
 function handleMarvelButtonClicked() {
-  setNavButtonActive("marvel");
+  setNavButtonActive(marvelNavButton);
 }
 
 function handleDCButtonClicked() {
-  setNavButtonActive("dc");
+  setNavButtonActive(dcNavButton);
 }
 
 function showListView() {
@@ -89,6 +89,7 @@ function onDocumentLoaded() {
   homeNavButton = document.getElementById("home");
   marvelNavButton = document.getElementById("marvel");
   dcNavButton = document.getElementById("dc");
+  listOfNavButtons = [homeNavButton, marvelNavButton, dcNavButton];
   topOffset = navbar.offsetTop;
   loadCharacterImages();
 }
