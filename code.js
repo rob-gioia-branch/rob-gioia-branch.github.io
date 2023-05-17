@@ -8,7 +8,6 @@ var navbar;
 var topOffset = 0;
 
 var characters = {};
-var isFirstLoad = true;
 
 function stickynavbar() {
   if (window.scrollY > topOffset) {    
@@ -32,10 +31,7 @@ async function loadCharacterImages() {
     await loadCharacterImage(dcCharacterIds[i], dcElementIds[i]);
   }
   window.allCharacters = characters;
-  if(isFirstLoad) {
-    isFirstLoad = false;
-    initializeBranch();
-  }
+  initializeBranch();
 }
 
 async function loadCharacterImage(characterID, elementID) {
