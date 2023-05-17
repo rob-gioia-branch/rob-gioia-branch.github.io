@@ -36,7 +36,7 @@ function createBranchLink() {
   	}
   };
   branch.link(linkData, function(err, link) {
-    console.log(link);
+  console.log(link);
 });
 }
 
