@@ -74,7 +74,7 @@ async function loadCharacterImage(characterID, elementID) {
     const name = character.getCharacterName();
     characters[name] = character;
     window.character = character;
-    const element = document.getElementById(elementID);
+    let element = document.getElementById(elementID);
     element.src=character.getCharacterImage();
     element.addEventListener('click', function (e) {
       window.character = characters[name];
