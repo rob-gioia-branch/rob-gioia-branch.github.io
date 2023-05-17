@@ -13,6 +13,7 @@ var homeNavButton;
 var marvelNavButton;
 var dcNavButton;
 var listOfNavButtons;
+var qrCodeImage;
 
 function stickynavbar() {
   if (window.scrollY > topOffset) {    
@@ -36,6 +37,7 @@ function setNavButtonActive(navButton) {
 function handleHomeButtonClicked() {
   showListView();
   setNavButtonActive(homeNavButton);
+  qrCodeImage.src = '';
 }
 
 function handleMarvelButtonClicked() {
@@ -88,6 +90,7 @@ function onDocumentLoaded() {
   homeNavButton = document.getElementById("home");
   marvelNavButton = document.getElementById("marvel");
   dcNavButton = document.getElementById("dc");
+  qrCodeImage = document.getElementById("qr-image");
   listOfNavButtons = [homeNavButton, marvelNavButton, dcNavButton];
   topOffset = navbar.offsetTop;
   loadCharacterImages();
