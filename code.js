@@ -79,7 +79,7 @@ async function loadCharacterImage(characterID, elementID) {
     element.addEventListener('click', function (e) {
       window.character = characters[name];
       import("/utils.js").then((utilsModule) => {
-        utilsModule.loadCharacterDetailView(characters[name]);
+        utilsModule.loadCharacterDetailView(window.character);
       });
   });
 });
