@@ -126,11 +126,13 @@ function trackEvent() {
 */
 function handleBranchSDKFinishedInitializing(data) {
   if(data == null) {
+    console.log("Data was null");
     branch.data(function(err, data) {
       handleDeepLinkRouting(data);
       addJourneyLifecycleEventListener();
     });
   } else {
+      console.log("Data was not null");
       handleDeepLinkRouting(data);
       addJourneyLifecycleEventListener();
   }
