@@ -1,4 +1,8 @@
+//keeps track of whether or not the user has disabled Branch tracking
 var isTrackingDisabled = false;  
+
+//used for making sure that the images have loaded AND the Branch SDK has initialized before trying to deep link
+var startupSystemsInitialized = false;
 
 /*
   Load and initialize the Branch SDK
@@ -13,11 +17,13 @@ function initializeBranch(isTestMode = false) {
   addJourneyLifecycleEventListener();
   if(isTestMode) {
     branch.init('key_test_hcGYfaAnBPHUutc7SRmrSgjdCrgZ30RL', function(err, data) {
-      handleDeepLinkRouting(data);
+      window.linkData = data;
+      handleStartupSystemFinishedInitializing();
     });
   } else {
     branch.init('key_live_ccQ8piFdCMPVysh8TLmEhghmuCk162Rr', function(err, data) {
-      handleDeepLinkRouting(data);
+      window.linkData = data;
+      handleStartupSystemFinishedInitializing();
     });
   }
 }
@@ -147,4 +153,18 @@ function handleDeepLinkRouting(data) {
 function addJourneyLifecycleEventListener() {
    var listener = function(event, data) { console.log(event, data); }
    branch.addListener(listener);
+}
+
+/* 
+  This function gets called twice:
+  • Once when the images are loaded 
+  • Once when the Branch SDK finishes initializing
+  • On the second call, once we know both startup systems have initialized, we can deep link the user
+*/
+function handleStartupSystemFinishedInitializing() {
+  if(!startupSystemsInitialized) {
+    startupSystemsInitialized = true;
+  } else {
+    handleDeepLinkRouting(window.linkData);
+  }
 }
