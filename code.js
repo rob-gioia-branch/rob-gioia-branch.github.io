@@ -18,8 +18,10 @@ function stickynavbar() {
 }
 
 function handleHomeButtonClicked() {
-  //turn on the list
-  //turn off the detail view
+  const listView = document.getElementById("list-view");
+  const detailView = document.getElementById("detail-view");
+  listView.hidden = false;
+  detailView.hidden = true;
   document.getElementById("home").classList.add('active');
   document.getElementById("marvel").classList.remove('active');
   document.getElementById("dc").classList.remove('active');
