@@ -7,21 +7,18 @@ var isTrackingDisabled = false;
    • If you'd like to use a specific version of the SDK, point to https://cdn.branch.io/branch-x.xx.x.min.js (e.g. https://cdn.branch.io/branch-2.47.1.min.js) rather than https://cdn.branch.io/branch-latest.min.js when initializing
 */
 function initializeBranch(isTestMode = false) {
-  isFirstLoad = false;
   //load the Branch SDK
   (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking qrCode".split(" "), 0);
   //initialize Branch with the live key or test
+  addJourneyLifecycleEventListener();
   if(isTestMode) {
-    addJourneyLifecycleEventListener();
-    branch.init('key_test_hcGYfaAnBPHUutc7SRmrSgjdCrgZ30RL', function(err, data) {
-      handleBranchSDKFinishedInitializing(data);
-  });
+    branch.init('key_test_hcGYfaAnBPHUutc7SRmrSgjdCrgZ30RL', function(err, data) {});
   } else {
-    addJourneyLifecycleEventListener();
-    branch.init('key_live_ccQ8piFdCMPVysh8TLmEhghmuCk162Rr', function(err, data) {
-      handleBranchSDKFinishedInitializing(data);
-  });
+    branch.init('key_live_ccQ8piFdCMPVysh8TLmEhghmuCk162Rr', function(err, data) {});
   }
+  branch.data(function(err, data) {
+    window.linkData = data;
+  });
 }
 
 /*
@@ -119,22 +116,6 @@ function trackEvent() {
     JSON.stringify(custom_data),
     function(err) { console.log("Event Logged: " + "Name: " + "Character Event Tracked", JSON.stringify(custom_data), "Error: " + err); }
 );
-}
-
-/* 
-  Code to be run after the Branch SDK finishes loading
-  • Encapsulating into a function since the init for the live and test keys have seperate callbacks
-*/
-function handleBranchSDKFinishedInitializing(data) {
-//   if(data == null) {
-//     console.log("Data was null");
-//     branch.data(function(err, data) {
-//       handleDeepLinkRouting(data);
-//     });
-//   } else {
-//       console.log("Data was not null");
-         handleDeepLinkRouting(data);
-//   }
 }
 
 /* 
