@@ -89,9 +89,7 @@ function onDocumentLoaded() {
   homeNavButton = document.getElementById("home");
   marvelNavButton = document.getElementById("marvel");
   dcNavButton = document.getElementById("dc");
-}
-
-var listOfNavButtons = [homeNavButton, marvelNavButton, dcNavButton];
+  listOfNavButtons = [homeNavButton, marvelNavButton, dcNavButton];
   topOffset = navbar.offsetTop;
   loadCharacterImages();
 }
