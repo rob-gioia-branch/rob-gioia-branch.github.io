@@ -20,7 +20,7 @@ function stickynavbar() {
 function reloadHomepage() {
   var redirectToURL = 'https://rob-gioia-branch.github.io/';
   window.location.href = redirectToURL;
-  window.location.reload(true);
+  window.location.reload();
 }
 
 async function loadCharacterImages() {
