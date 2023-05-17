@@ -132,8 +132,8 @@ function trackEvent() {
 */
 function handleDeepLinkRouting(data) {
   console.log(data);
-  if(data['data_parsed']['clicked_branch_link'] == "false") { return; } //if a Branch link was not clicked we can return since we don't need to deep link
   var referringLink = data['data_parsed']['~referring_link'];
+  if(referringLink == undefined) { return; } //if a Branch link was not clicked we can return since we don't need to deep link
   var characterName = "";
   if(referringLink.includes("app.link")) {
     characterName = data['data_parsed']['name'];
