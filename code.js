@@ -13,7 +13,7 @@ var homeNavButton;
 var marvelNavButton;
 var dcNavButton;
 
-var listOfNavButtons;
+var listOfNavButtons =["home", "marvel", "dc"];
 
 function stickynavbar() {
   if (window.scrollY > topOffset) {    
@@ -39,13 +39,6 @@ function handleHomeButtonClicked() {
   setNavButtonActive("home");
 }
 
-function showListView() {
-  const listView = document.getElementById("list-view");
-  const detailView = document.getElementById("detail-view");
-  listView.hidden = false;
-  detailView.hidden = true;
-}
-
 function handleMarvelButtonClicked() {
   setNavButtonActive("marvel");
 }
@@ -54,11 +47,18 @@ function handleDCButtonClicked() {
   setNavButtonActive("dc");
 }
 
+function showListView() {
+  const listView = document.getElementById("list-view");
+  const detailView = document.getElementById("detail-view");
+  listView.hidden = false;
+  detailView.hidden = true;
+}
+
 async function loadCharacterImages() {
   for(var i = 0; i < marvelCharacterIds.length; i++) {
     await loadCharacterImage(marvelCharacterIds[i], marvelElementIds[i]);
   }
-    for(var i = 0; i < dcCharacterIds.length; i++) {
+  for(var i = 0; i < dcCharacterIds.length; i++) {
     await loadCharacterImage(dcCharacterIds[i], dcElementIds[i]);
   }
   window.allCharacters = characters;
@@ -89,7 +89,6 @@ function onDocumentLoaded() {
   homeNavButton = document.getElementById("home");
   marvelNavButton = document.getElementById("marvel");
   dcNavButton = document.getElementById("dc");
-  listOfNavButtons = [homeNavButton, marvelNavButton, dcNavButton];
   topOffset = navbar.offsetTop;
   loadCharacterImages();
 }
