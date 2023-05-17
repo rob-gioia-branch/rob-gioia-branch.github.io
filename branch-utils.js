@@ -18,6 +18,7 @@ function initializeBranch(isTestMode = false) {
   }
   branch.data(function(err, data) {
     window.linkData = data;
+    loadCharacterImages();
   });
 }
 
