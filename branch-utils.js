@@ -127,7 +127,6 @@ function trackEvent() {
 function handleBranchSDKFinishedInitializing(data) {
     branch.data(function(err, data) {
       handleDeepLinkRouting(data);
-      console.log("Branch SDK initialization finished");
     });
 }
 
