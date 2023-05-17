@@ -27,7 +27,7 @@ async function loadCharacterImages() {
   for(var i = 0; i < marvelCharacterIds.length; i++) {
     await loadCharacterImage(marvelCharacterIds[i], marvelElementIds[i]);
   }
-    for(var i = 0; i < dcCharacterIds.length; i++) {
+    for(var i = 0; i < dcCharacterIds.length - 1; i++) {
     await loadCharacterImage(dcCharacterIds[i], dcElementIds[i]);
   }
   window.allCharacters = characters;
