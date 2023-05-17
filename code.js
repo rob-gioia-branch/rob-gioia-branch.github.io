@@ -20,15 +20,21 @@ function stickynavbar() {
 function handleHomeButtonClicked() {
   //turn on the list
   //turn off the detail view
-  //highlight the home button
+  document.getElementById("home").classList.add('active');
+  document.getElementById("marvel").classList.remove('active');
+  document.getElementById("dc").classList.remove('active');
 }
 
 function handleMarvelButtonClicked() {
-  //highlight the marvel button
+  document.getElementById("marvel").classList.add('active');
+  document.getElementById("home").classList.remove('active');
+  document.getElementById("dc").classList.remove('active');
 }
 
 function handleDCButtonClicked() {
-  //highlight the DC button
+  document.getElementById("dc").classList.add('active');
+  document.getElementById("home").classList.remove('active');
+  document.getElementById("marvel").classList.remove('active');
 }
 
 async function loadCharacterImages() {
