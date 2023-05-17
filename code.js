@@ -13,7 +13,6 @@ var homeNavButton;
 var marvelNavButton;
 var dcNavButton;
 var listOfNavButtons;
-var listOfNavButtonNames =["home", "marvel", "dc"];
 
 function stickynavbar() {
   if (window.scrollY > topOffset) {    
