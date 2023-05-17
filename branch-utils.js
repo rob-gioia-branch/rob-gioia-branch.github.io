@@ -12,14 +12,14 @@ function initializeBranch(isTestMode = false) {
   //initialize Branch with the live key or test
   addJourneyLifecycleEventListener();
   if(isTestMode) {
-    branch.init('key_test_hcGYfaAnBPHUutc7SRmrSgjdCrgZ30RL', function(err, data) {});
+    branch.init('key_test_hcGYfaAnBPHUutc7SRmrSgjdCrgZ30RL', function(err, data) {
+      handleDeepLinkRouting(data);
+    });
   } else {
-    branch.init('key_live_ccQ8piFdCMPVysh8TLmEhghmuCk162Rr', function(err, data) {});
+    branch.init('key_live_ccQ8piFdCMPVysh8TLmEhghmuCk162Rr', function(err, data) {
+      handleDeepLinkRouting(data);
+    });
   }
-  branch.data(function(err, data) {
-    window.linkData = data;
-    loadCharacterImages();
-  });
 }
 
 /*
