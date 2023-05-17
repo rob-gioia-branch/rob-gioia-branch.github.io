@@ -31,7 +31,6 @@ async function loadCharacterImages() {
     await loadCharacterImage(dcCharacterIds[i], dcElementIds[i]);
   }
   window.allCharacters = characters;
-  handleDeepLinkRouting(window.linkData);
 }
 
 async function loadCharacterImage(characterID, elementID) {
