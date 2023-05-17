@@ -17,6 +17,20 @@ function stickynavbar() {
   }
 }
 
+function handleHomeButtonClicked() {
+  //turn on the list
+  //turn off the detail view
+  //highlight the home button
+}
+
+function handleMarvelButtonClicked() {
+  //highlight the marvel button
+}
+
+function handleDCButtonClicked() {
+  //highlight the DC button
+}
+
 async function loadCharacterImages() {
   for(var i = 0; i < marvelCharacterIds.length; i++) {
     await loadCharacterImage(marvelCharacterIds[i], marvelElementIds[i]);
