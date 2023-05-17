@@ -17,12 +17,6 @@ function stickynavbar() {
   }
 }
 
-function reloadHomepage() {
-  var redirectToURL = 'https://rob-gioia-branch.github.io/';
-  window.location.href = redirectToURL;
-  window.location.reload();
-}
-
 async function loadCharacterImages() {
   for(var i = 0; i < marvelCharacterIds.length; i++) {
     await loadCharacterImage(marvelCharacterIds[i], marvelElementIds[i]);
