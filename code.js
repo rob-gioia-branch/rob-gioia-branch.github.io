@@ -63,7 +63,7 @@ async function loadCharacterImages() {
     await loadCharacterImage(dcCharacterIds[i], dcElementIds[i]);
   }
   window.allCharacters = characters;
-  handleStartupSystemFinishedInitializing();
+  checkIfStartupSystemsFinishedInitializing();
 }
 
 async function loadCharacterImage(characterID, elementID) {
