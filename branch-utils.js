@@ -165,6 +165,9 @@ function handleStartupSystemsFinishedInitializing() {
     handleDeepLinkRouting(window.linkData);
 }
 
+/* 
+  Checks if a startup system finished initializing and if both have calls the handler function
+*/
 function checkIfStartupSystemsFinishedInitializing() {
   if(startupSystemsInitialized) {
     handleStartupSystemsFinishedInitializing();
