@@ -18,12 +18,13 @@ function initializeBranch(isTestMode = false) {
   if(isTestMode) {
     branch.init('key_test_hcGYfaAnBPHUutc7SRmrSgjdCrgZ30RL', function(err, data) {
       window.linkData = data;
-      handleStartupSystemFinishedInitializing();
+      checkIfStartupSystemsFinishedInitializing();
+      
     });
   } else {
     branch.init('key_live_ccQ8piFdCMPVysh8TLmEhghmuCk162Rr', function(err, data) {
       window.linkData = data;
-      handleStartupSystemFinishedInitializing();
+      checkIfStartupSystemsFinishedInitializing();
     });
   }
 }
@@ -158,15 +159,16 @@ function addJourneyLifecycleEventListener() {
 }
 
 /* 
-  This function gets called twice:
-  • Once when the images are loaded 
-  • Once when the Branch SDK finishes initializing
-  • On the second call, once we know both startup systems have initialized, we can deep link the user
+  Once we know both startup systems have initialized, we can deep link the user
 */
-function handleStartupSystemFinishedInitializing() {
-  if(!startupSystemsInitialized) {
-    startupSystemsInitialized = true;
-  } else {
+function handleStartupSystemsFinishedInitializing() {
     handleDeepLinkRouting(window.linkData);
+}
+
+function checkIfStartupSystemsFinishedInitializing() {
+  if(startupSystemsInitialized) {
+    handleStartupSystemsFinishedInitializing();
+  } else {
+    startupSystemsInitialized = true;
   }
 }
