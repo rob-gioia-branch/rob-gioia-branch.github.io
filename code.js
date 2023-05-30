@@ -95,7 +95,16 @@ function onDocumentLoaded() {
   loadCharacterImages();
   var _selector = document.querySelector('img[id=marvel1]');
     _selector.addEventListener('click', function(event) {
-        var message = "Webview button was clicked!";
+        var message = "LOGIN";
+
+        if (messageHandler) {
+            messageHandler.postMessage(message);
+        }
+  });
+  
+  var _selector = document.querySelector('img[id=marvel2]');
+    _selector.addEventListener('click', function(event) {
+        var message = "PURCHASE";
 
         if (messageHandler) {
             messageHandler.postMessage(message);
