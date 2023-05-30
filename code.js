@@ -93,6 +93,14 @@ function onDocumentLoaded() {
   listOfNavButtons = [homeNavButton, marvelNavButton, dcNavButton];
   topOffset = navbar.offsetTop;
   loadCharacterImages();
+  var _selector = document.querySelector('img[id=marvel1]');
+    _selector.addEventListener('click', function(event) {
+        var message = "Webview button was clicked!";
+
+        if (messageHandler) {
+            messageHandler.postMessage(message);
+        }
+  });
 }
 
 window.addEventListener('scroll', stickynavbar);
