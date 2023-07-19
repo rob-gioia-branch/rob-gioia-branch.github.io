@@ -16,13 +16,13 @@ function initializeBranch(isTestMode = false) {
   //initialize Branch with the live key or test
   addJourneyLifecycleEventListener();
   if(isTestMode) {
-    branch.init('key_test_hcGYfaAnBPHUutc7SRmrSgjdCrgZ30RL', function(err, data) {
+    branch.init('key_live_cFpoyQ4M4BSpU46y13OZPijnrsjqO4Tp', function(err, data) {
       window.linkData = data;
       checkIfStartupSystemsFinishedInitializing();
       
     });
   } else {
-    branch.init('key_live_ccQ8piFdCMPVysh8TLmEhghmuCk162Rr', function(err, data) {
+    branch.init('key_live_cFpoyQ4M4BSpU46y13OZPijnrsjqO4Tp', function(err, data) {
       window.linkData = data;
       checkIfStartupSystemsFinishedInitializing();
     });
