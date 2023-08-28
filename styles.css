@@ -80,3 +80,11 @@ button {
     margin: auto;
     width: 100%;
 }
+
+#addToBag {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 300;
+}
