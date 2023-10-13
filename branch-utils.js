@@ -97,7 +97,7 @@ function toggleTracking() {
 */
 function login() {
   const name = window.character.getCharacterName();
-  branch.setIdentity(name);
+  //branch.setIdentity(name);
   console.log("User has been logged in as " + name);
 }
 
