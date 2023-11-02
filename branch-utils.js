@@ -16,7 +16,7 @@ function initializeBranch(isTestMode = false) {
   //initialize Branch with the live key or test
   addJourneyLifecycleEventListener();
   if(isTestMode) {
-    branch.init('key_live_cFpoyQ4M4BSpU46y13OZPijnrsjqO4Tp', function(err, data) {
+    branch.init('key_live_bfDmUk7zZWi46XpUIzj5YbffsAk0WfJO', function(err, data) {
       window.linkData = data;
       checkIfStartupSystemsFinishedInitializing();
       
