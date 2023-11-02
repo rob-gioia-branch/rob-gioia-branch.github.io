@@ -22,7 +22,7 @@ function initializeBranch(isTestMode = false) {
       
     });
   } else {
-    branch.init('key_live_cFpoyQ4M4BSpU46y13OZPijnrsjqO4Tp', function(err, data) {
+    branch.init('key_live_bfDmUk7zZWi46XpUIzj5YbffsAk0WfJO', function(err, data) {
       window.linkData = data;
       checkIfStartupSystemsFinishedInitializing();
     });
