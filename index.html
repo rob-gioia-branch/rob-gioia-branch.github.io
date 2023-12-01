@@ -23,7 +23,7 @@
           document.getElementById('load-spa').style.visibility= "visible";
           document.getElementById('page1-h1').innerHTML = "Page 1";
           document.getElementById('page1-h2').innerHTML = "non-SPA";
-          window.history.pushState("rob-gioia-branch.github.io/page1");
+          window.history.pushState(null, null, "rob-gioia-branch.github.io/page1");
           branch.closeJourney(function(err) { 
             setTimeout(function() { 
                 branch.track('pageview');
@@ -38,7 +38,7 @@
           document.getElementById('load-spa').style.visibility= "hidden";
           document.getElementById('page1-h1').innerHTML = "Page 1";
           document.getElementById('page1-h2').innerHTML = " current: SPA | prior:non-SPA";
-          window.history.pushState("rob-gioia-branch.github.io/page1-spa");
+          window.history.pushState(null, null, "rob-gioia-branch.github.io/page1-spa");
           branch.closeJourney(function(err) { 
             setTimeout(function() { 
                 console.log("Hit!");
