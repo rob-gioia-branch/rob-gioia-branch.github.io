@@ -24,11 +24,7 @@
           document.getElementById('page1-h1').innerHTML = "Page 1";
           document.getElementById('page1-h2').innerHTML = "non-SPA";
           window.history.pushState(null, null, "index.html");
-          branch.closeJourney(function(err) { 
-            setTimeout(function() { 
-                branch.track('pageview');
-            }, 150);
-          });
+          handleNewPageLoaded();
         }
       }
 
@@ -39,12 +35,21 @@
           document.getElementById('page1-h1').innerHTML = "Page 1";
           document.getElementById('page1-h2').innerHTML = " current: SPA | prior:non-SPA";
           window.history.pushState(null, null, "page1-spa");
-          branch.closeJourney(function(err) { 
-            setTimeout(function() { 
-                console.log(window.location.href);
-                branch.track('pageview');
-            }, 100);
+          handleNewPageLoaded();
+        }
+      }
+
+      function handleNewPageLoaded() {
+        function doesJourneyExistOnPage() {
+        var elem = document.getElementById("branch-banner-iframe");
+        if (elem) {
+           branch.closeJourney(function(err) { 
+             setTimeout(function() { 
+               branch.track('pageview');
+            }, 150);
           });
+        } else { 
+          branch.track('pageview');
         }
       }
     </script>
