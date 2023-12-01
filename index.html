@@ -20,8 +20,8 @@
       function handleBackButtonClicked() {
         if(isSPAPage) {
           isSPAPage = false;
-          document.getElementById('back-button-1').visibility= 'hidden';
-          document.getElementById('load-spa').visibility= 'visible';
+          document.getElementById('back-button-1').style.visibility= 'hidden';
+          document.getElementById('load-spa').style.visibility= 'visible';
           document.getElementById('page1-h1').innerHTML = "Page 1";
           document.getElementById('page1-h2').innerHTML = "non-SPA";
         }
@@ -30,8 +30,8 @@
       function handleLoadSPAButtonClicked() {
         if(!isSPAPage) {
           isSPAPage = true;
-          document.getElementById('back-button-1').visibility= 'visible';
-          document.getElementById('load-spa').visibility= 'hidden';
+          document.getElementById('back-button-1').style.visibility= 'visible';
+          document.getElementById('load-spa').style.visibility= 'hidden';
           document.getElementById('page1-h1').innerHTML = "Page 1";
           document.getElementById('page1-h2').innerHTML = " current: SPA | prior:non-SPA";
         }
