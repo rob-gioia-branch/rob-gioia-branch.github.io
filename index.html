@@ -40,18 +40,16 @@
       }
 
       function handleNewPageLoaded() {
-        function doesJourneyExistOnPage() {
-        var elem = document.getElementById("branch-banner-iframe");
-        if (elem) {
+        // var elem = document.getElementById("branch-banner-iframe");
+        // if (elem) {
            branch.closeJourney(function(err) { 
              setTimeout(function() { 
                branch.track('pageview');
             }, 150);
           });
-        } else { 
-          branch.track('pageview');
-        }
-      }
+        // } else { 
+        //   branch.track('pageview');
+        // }
     }
     </script>
   </body>
