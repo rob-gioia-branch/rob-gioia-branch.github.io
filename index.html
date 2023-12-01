@@ -24,7 +24,10 @@
           document.getElementById('page1-h1').innerHTML = "Page 1";
           document.getElementById('page1-h2').innerHTML = "non-SPA";
           window.history.replaceState(null, null, "index.html");
-          handleNewPageLoaded();
+           branch.closeJourney(function(err) { 
+             setTimeout(function() { 
+               branch.track('pageview');
+            }, 150);
         }
       }
 
@@ -35,21 +38,10 @@
           document.getElementById('page1-h1').innerHTML = "Page 1";
           document.getElementById('page1-h2').innerHTML = " current: SPA | prior:non-SPA";
           window.history.replaceState(null, null, "page1-spa");
-          handleNewPageLoaded();
-        }
-      }
-
-      function handleNewPageLoaded() {
-        var elem = document.getElementById("branch-banner-iframe");
-        if (elem) {
            branch.closeJourney(function(err) { 
              setTimeout(function() { 
                branch.track('pageview');
             }, 150);
-             branch.track('pageview');
-          });
-        } else { 
-          branch.track('pageview');
         }
       }
     </script>
