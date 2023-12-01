@@ -43,9 +43,9 @@
         var elem = document.getElementById("branch-banner-iframe");
         if (elem) {
            branch.closeJourney(function(err) { 
-             setTimeout(function() { 
+             // setTimeout(function() { 
                branch.track('pageview');
-            }, 150);
+            // }, 150);
           });
         } else { 
           branch.track('pageview');
