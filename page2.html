@@ -9,9 +9,40 @@
     </script>
   </head>
   <body>
-    <h1> Page 2 </h1>
-    <h2> non-SPA </h2>
-    <button type="button">Back</button>
-    <button type="button">Load SPA page</button>
+    <h1 id="page2-h1"> Page 2 </h1>
+    <h2 id="page2-h2"> non-SPA </h2>
+    <button id="load-spa-2" type="button">Load SPA page</button>
+    <button id="back-button-2" type="button">Back</button>
+    <script>
+      var isSPAPage = false; 
+      var isSecondSPAPage = false;
+      
+      function handleBackButtonClicked() {
+        if(isSPAPage) {
+          if(!isSecondSPAPage) {
+            isSPAPage = false;
+            document.getElementById('page2-h2').value = "non-SPA";
+          } else {
+            isSecondSPAPage = false;
+            isSPAPage = true;
+            document.getElementById('page2-h2').value = "SPA";
+            document.getElementById('page1-h1').value = "Page 2";
+          }
+        } else {
+          window.location.href = 'https://rob-gioia-branch.github.io/index.html'
+        }
+      }
+
+      function handleLoadSPAButtonClicked() {
+        if(!isSPAPage) {
+          isSPAPage = true;
+          document.getElementById('page1-h2').value = " current: SPA | prior:non-SPA";
+        } else {
+          isSecondSPAPage = true;
+          document.getElementById('page1-h1').value = "Page 3";
+          document.getElementById('page1-h2').value = " current: SPA | prior:SPA";
+        }
+      }
+    </script>
   </body>
 </html>
