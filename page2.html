@@ -22,13 +22,13 @@
           if(!isSecondSPAPage) {
             isSPAPage = false;
             document.getElementById('page2-h2').innerHTML = "non-SPA";
-            window.history.pushState("rob-gioia-branch.github.io/page2-regular");
+            window.history.pushState(null, null, "rob-gioia-branch.github.io/page2-regular");
           } else {
             isSecondSPAPage = false;
             isSPAPage = true;
             document.getElementById('page2-h2').innerHTML = "SPA";
             document.getElementById('page2-h1').innerHTML = "Page 2";
-            window.history.pushState("rob-gioia-branch.github.io/page2-spa");
+            window.history.pushState(null, null, "rob-gioia-branch.github.io/page2-spa");
           }
           branch.closeJourney(function(err) { 
             setTimeout(function() { 
@@ -44,12 +44,12 @@
         if(!isSPAPage) {
           isSPAPage = true;
           document.getElementById('page2-h2').innerHTML = " current: SPA | prior:non-SPA";
-          window.history.pushState("rob-gioia-branch.github.io/page2-spa");
+          window.history.pushState(null, null, "rob-gioia-branch.github.io/page2-spa");
         } else {
           isSecondSPAPage = true;
           document.getElementById('page2-h1').innerHTML = "Page 3";
           document.getElementById('page2-h2').innerHTML = " current: SPA | prior:SPA";
-          window.history.pushState("rob-gioia-branch.github.io/page3-spa");
+          window.history.pushState(null, null, "rob-gioia-branch.github.io/page3-spa");
         }
         branch.closeJourney(function(err) { 
           setTimeout(function() { 
