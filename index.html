@@ -13,14 +13,13 @@
     <h2 id="page1-h2"> non-SPA </h2>
     <button id="load-spa" type="button" onclick="handleLoadSPAButtonClicked()">Load SPA page</button>
     <button id="load-regular" type="button" onclick="window.location.href = 'https://rob-gioia-branch.github.io/page2.html'">Load regular page</button>
-    <button id="back-button-1" type="button" onclick="handleBackButtonClicked()" hidden>Back</button> <!-- hidden if first page -->
+    <button id="back-button-1" type="button" onclick="handleBackButtonClicked()">Back</button> <!-- hidden if first page -->
     <script>
       var isSPAPage = false; 
         
       function handleBackButtonClicked() {
         if(isSPAPage) {
           isSPAPage = false;
-          document.getElementById('back-button-1').style.visibility= "hidden";
           document.getElementById('load-spa').style.visibility= "visible";
           document.getElementById('page1-h1').innerHTML = "Page 1";
           document.getElementById('page1-h2').innerHTML = "non-SPA";
@@ -30,7 +29,6 @@
       function handleLoadSPAButtonClicked() {
         if(!isSPAPage) {
           isSPAPage = true;
-          document.getElementById('back-button-1').style.visibility= "visible";
           document.getElementById('load-spa').style.visibility= "hidden";
           document.getElementById('page1-h1').innerHTML = "Page 1";
           document.getElementById('page1-h2').innerHTML = " current: SPA | prior:non-SPA";
