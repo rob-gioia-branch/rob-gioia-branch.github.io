@@ -21,12 +21,12 @@
         if(isSPAPage) {
           if(!isSecondSPAPage) {
             isSPAPage = false;
-            document.getElementById('page2-h2').value = "non-SPA";
+            document.getElementById('page2-h2').innerHTML = "non-SPA";
           } else {
             isSecondSPAPage = false;
             isSPAPage = true;
-            document.getElementById('page2-h2').value = "SPA";
-            document.getElementById('page1-h1').value = "Page 2";
+            document.getElementById('page2-h2').innerHTML = "SPA";
+            document.getElementById('page1-h1').innerHTML = "Page 2";
           }
         } else {
           window.location.href = 'https://rob-gioia-branch.github.io/index.html'
@@ -36,11 +36,11 @@
       function handleLoadSPAButtonClicked() {
         if(!isSPAPage) {
           isSPAPage = true;
-          document.getElementById('page1-h2').value = " current: SPA | prior:non-SPA";
+          document.getElementById('page1-h2').innerHTML = " current: SPA | prior:non-SPA";
         } else {
           isSecondSPAPage = true;
-          document.getElementById('page1-h1').value = "Page 3";
-          document.getElementById('page1-h2').value = " current: SPA | prior:SPA";
+          document.getElementById('page1-h1').innerHTML = "Page 3";
+          document.getElementById('page1-h2').innerHTML = " current: SPA | prior:SPA";
         }
       }
     </script>
