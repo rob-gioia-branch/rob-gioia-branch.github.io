@@ -23,7 +23,7 @@
           document.getElementById('load-spa').style.visibility= "visible";
           document.getElementById('page1-h1').innerHTML = "Page 1";
           document.getElementById('page1-h2').innerHTML = "non-SPA";
-          window.history.pushState(null, null, "index.html");
+          window.history.replaceState(null, null, "index.html");
           handleNewPageLoaded();
         }
       }
@@ -34,7 +34,7 @@
           document.getElementById('load-spa').style.visibility= "hidden";
           document.getElementById('page1-h1').innerHTML = "Page 1";
           document.getElementById('page1-h2').innerHTML = " current: SPA | prior:non-SPA";
-          //window.history.pushState(null, null, "page1-spa");
+          window.history.replaceState(null, null, "page1-spa");
           handleNewPageLoaded();
         }
       }
