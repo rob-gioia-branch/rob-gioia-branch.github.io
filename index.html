@@ -41,7 +41,7 @@
           window.history.pushState(null, null, "page1-spa");
           branch.closeJourney(function(err) { 
             setTimeout(function() { 
-                console.log("Hit!");
+                console.log(window.location.href);
                 branch.track('pageview');
             }, 150);
           });
