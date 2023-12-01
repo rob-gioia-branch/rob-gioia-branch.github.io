@@ -9,10 +9,33 @@
     </script>
   </head>
   <body>
-    <h1> Page 1 </h1>
-    <h2> non-SPA </h2>
-    <button type="button">Load SPA page</button>
-    <button type="button">Load regular page</button>
-    <button type="button">Back</button>
+    <h1 id="page1-h1"> Page 1 </h1>
+    <h2 id="page1-h2"> non-SPA </h2>
+    <button id="load-spa" type="button" onclick="handleLoadSPAButtonClicked()">Load SPA page</button>
+    <button id="load-regular" type="button" onclick="window.location.href = 'https://rob-gioia-branch.github.io/page2.html'">Load regular page</button>
+    <button id="back-button-1" type="button" onclick="handleBackButtonClicked()" hidden>Back</button> <!-- hidden if first page -->
+    <script>
+      var isSPAPage = false; 
+        
+      function handleBackButtonClicked() {
+        if(isSPAPage) {
+          isSPAPage = false;
+          document.getElementById('back-button-1').visibility= 'hidden';
+          document.getElementById('load-spa').visibility= 'visible';
+          document.getElementById('page1-h1').value = "Page 1";
+          document.getElementById('page1-h2').value = "non-SPA";
+        }
+      }
+
+      function handleLoadSPAButtonClicked() {
+        if(!isSPAPage) {
+          isSPAPage = true;
+          document.getElementById('back-button-1').visibility= 'visible';
+          document.getElementById('load-spa').visibility= 'hidden';
+          document.getElementById('page1-h1').value = "Page 2";
+          document.getElementById('page1-h2').value = " current: SPA | prior:non-SPA";
+        }
+      }
+    </script>
   </body>
 </html>
