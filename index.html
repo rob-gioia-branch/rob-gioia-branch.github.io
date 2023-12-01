@@ -24,9 +24,9 @@
           document.getElementById('page1-h1').innerHTML = "Page 1";
           document.getElementById('page1-h2').innerHTML = "non-SPA";
           branch.closeJourney(function(err) { 
-            // setTimeout(function() { 
+            setTimeout(function() { 
                 branch.track('pageview');
-            // }, 150);
+            }, 150);
           });
         }
       }
@@ -38,9 +38,10 @@
           document.getElementById('page1-h1').innerHTML = "Page 1";
           document.getElementById('page1-h2').innerHTML = " current: SPA | prior:non-SPA";
           branch.closeJourney(function(err) { 
-            // setTimeout(function() { 
+            setTimeout(function() { 
+                console.log("Hit!");
                 branch.track('pageview');
-            // }, 150);
+            }, 150);
           });
         }
       }
