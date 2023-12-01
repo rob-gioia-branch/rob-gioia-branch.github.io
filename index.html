@@ -22,8 +22,8 @@
           isSPAPage = false;
           document.getElementById('back-button-1').visibility= 'hidden';
           document.getElementById('load-spa').visibility= 'visible';
-          document.getElementById('page1-h1').value = "Page 1";
-          document.getElementById('page1-h2').value = "non-SPA";
+          document.getElementById('page1-h1').innerHTML = "Page 1";
+          document.getElementById('page1-h2').innerHTML = "non-SPA";
         }
       }
 
@@ -32,8 +32,8 @@
           isSPAPage = true;
           document.getElementById('back-button-1').visibility= 'visible';
           document.getElementById('load-spa').visibility= 'hidden';
-          document.getElementById('page1-h1').value = "Page 1";
-          document.getElementById('page1-h2').value = " current: SPA | prior:non-SPA";
+          document.getElementById('page1-h1').innerHTML = "Page 1";
+          document.getElementById('page1-h2').innerHTML = " current: SPA | prior:non-SPA";
         }
       }
     </script>
