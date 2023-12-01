@@ -30,11 +30,7 @@
             document.getElementById('page2-h1').innerHTML = "Page 2";
             window.history.pushState(null, null, "page2-spa");
           }
-          branch.closeJourney(function(err) { 
-            setTimeout(function() { 
-                branch.track('pageview');
-              }, 150);
-            });
+          handleNewPageLoaded();
         } else {
           window.location.href = 'https://rob-gioia-branch.github.io/index.html'
         }
@@ -51,11 +47,7 @@
           document.getElementById('page2-h2').innerHTML = " current: SPA | prior:SPA";
           window.history.pushState(null, null, "page3-spa");
         }
-        branch.closeJourney(function(err) { 
-          setTimeout(function() { 
-            branch.track('pageview');
-          }, 150);
-        });
+        handleNewPageLoaded();
       }
     </script>
   </body>
