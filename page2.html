@@ -22,13 +22,13 @@
           if(!isSecondSPAPage) {
             isSPAPage = false;
             document.getElementById('page2-h2').innerHTML = "non-SPA";
-            window.history.pushState(null, null, "page2.html");
+            window.history.replaceState(null, null, "page2.html");
           } else {
             isSecondSPAPage = false;
             isSPAPage = true;
             document.getElementById('page2-h2').innerHTML = "SPA";
             document.getElementById('page2-h1').innerHTML = "Page 2";
-            window.history.pushState(null, null, "page2-spa");
+            window.history.replaceState(null, null, "page2-spa");
           }
           handleNewPageLoaded();
         } else {
@@ -40,12 +40,12 @@
         if(!isSPAPage) {
           isSPAPage = true;
           document.getElementById('page2-h2').innerHTML = " current: SPA | prior:non-SPA";
-          window.history.pushState(null, null, "page2-spa");
+          window.history.replaceState(null, null, "page2-spa");
         } else {
           isSecondSPAPage = true;
           document.getElementById('page2-h1').innerHTML = "Page 3";
           document.getElementById('page2-h2').innerHTML = " current: SPA | prior:SPA";
-          window.history.pushState(null, null, "page3-spa");
+          window.history.replaceState(null, null, "page3-spa");
         }
         handleNewPageLoaded();
       }
