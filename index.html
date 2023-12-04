@@ -7,7 +7,10 @@
          // init Branch
          branch.init('key_live_alXEebrYD6sXYsXfU8PREhnhzrcWdEN8');
          var listener = function(event, data) {
-           branch.track('pageview');
+           setTimeout(() {
+            branch.track('pageview');
+          }, "1000");
+           // branch.track('pageview');
          }
          branch.addListener('didCloseJourney', listener);
     </script>
