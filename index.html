@@ -6,13 +6,11 @@
          (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener banner closeBanner closeJourney data deepview deepviewCta first init link logout removeListener setBranchViewData setIdentity track trackCommerceEvent logEvent disableTracking getBrowserFingerprintId crossPlatformIds lastAttributedTouchData setAPIResponseCallback qrCode".split(" "), 0);
          // init Branch
          branch.init('key_live_alXEebrYD6sXYsXfU8PREhnhzrcWdEN8');
-         var listener = function(event, data) {
-           setTimeout(() {
-            branch.track('pageview');
-          }, "1000");
-           // branch.track('pageview');
-         }
-         branch.addListener('didCloseJourney', listener);
+         window.onload = function(e){ 
+          setTimeout(() => {
+            closeBranchJourney();
+          }, 250);
+        }
     </script>
   </head>
   <body>
@@ -23,6 +21,26 @@
     <button id="back-button-1" type="button" onclick="handleBackButtonClicked()">Back</button> <!-- hidden if first page -->
     <script>
       var isSPAPage = false; 
+
+      function closeBranchJourney {
+        console.info("[branch.io] closeJourney is called");
+        window.branch.closeJourney((err) => {
+          if (err) {
+            console.error("[branch.io] Fails to close the Journey: ", err);
+          }
+          else {
+            setTimeout(() => {
+              // reopen
+              console.info("[branch.io] pageview is called");
+              window.branch.track("pageview", (err) => {
+                if (err) {
+                  console.error("[branch.io] Fails to show the Journey:", err);
+                }
+              })
+            }, 500)
+          }
+        });
+      }
         
       function handleBackButtonClicked() {
         if(isSPAPage) {
@@ -31,7 +49,7 @@
           document.getElementById('page1-h1').innerHTML = "Page 1";
           document.getElementById('page1-h2').innerHTML = "non-SPA";
           window.history.replaceState(null, null, "index.html");
-          branch.closeJourney();
+          closeBranchJourney();
         }
       }
 
@@ -42,7 +60,7 @@
           document.getElementById('page1-h1').innerHTML = "Page 1";
           document.getElementById('page1-h2').innerHTML = " current: SPA | prior:non-SPA";
           window.history.replaceState(null, null, "page1-spa");
-          branch.closeJourney();
+          closeBranchJourney();
         }
       }
     </script>
