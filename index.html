@@ -61,6 +61,7 @@
           document.getElementById('page1-h2').innerHTML = "non-SPA";
           window.history.replaceState(null, null, "index.html");
           //closeBranchJourney();
+          dataLayer.push({'event': 'TRIGGER_SPA_CODE'});
         }
       }
 
@@ -72,6 +73,7 @@
           document.getElementById('page1-h2').innerHTML = " current: SPA | prior:non-SPA";
           window.history.replaceState(null, null, "page1-spa");
           //closeBranchJourney();
+          dataLayer.push({'event': 'TRIGGER_SPA_CODE'});
         }
       }
     </script>
