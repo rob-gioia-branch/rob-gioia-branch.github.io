@@ -33,25 +33,25 @@
       var isSPAPage = false; 
       var isSecondSPAPage = false;
 
-      function closeBranchJourney() {
-        console.info("[branch.io] closeJourney is called");
-        window.branch.closeJourney((err) => {
-          if (err) {
-            console.error("[branch.io] Fails to close the Journey: ", err);
-          }
-          else {
-            setTimeout(() => {
-              // reopen
-              console.info("[branch.io] pageview is called");
-              window.branch.track("pageview", (err) => {
-                if (err) {
-                  console.error("[branch.io] Fails to show the Journey:", err);
-                }
-              })
-            }, 500)
-          }
-        });
-      }
+      // function closeBranchJourney() {
+      //   console.info("[branch.io] closeJourney is called");
+      //   window.branch.closeJourney((err) => {
+      //     if (err) {
+      //       console.error("[branch.io] Fails to close the Journey: ", err);
+      //     }
+      //     else {
+      //       setTimeout(() => {
+      //         // reopen
+      //         console.info("[branch.io] pageview is called");
+      //         window.branch.track("pageview", (err) => {
+      //           if (err) {
+      //             console.error("[branch.io] Fails to show the Journey:", err);
+      //           }
+      //         })
+      //       }, 500)
+      //     }
+      //   });
+      // }
       
       function handleBackButtonClicked() {
         if(isSPAPage) {
@@ -66,7 +66,7 @@
             document.getElementById('page2-h1').innerHTML = "Page 2";
             window.history.replaceState(null, null, "page2-spa");
           }
-          closeBranchJourney();
+          //closeBranchJourney();
         } else {
           window.location.href = 'https://rob-gioia-branch.github.io/index.html'
         }
@@ -83,7 +83,7 @@
           document.getElementById('page2-h2').innerHTML = " current: SPA | prior:SPA";
           window.history.replaceState(null, null, "page3-spa");
         }
-        closeBranchJourney();
+        //closeBranchJourney();
       }  
     </script>
   </body>
