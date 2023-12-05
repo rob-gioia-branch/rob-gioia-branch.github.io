@@ -67,6 +67,7 @@
             window.history.replaceState(null, null, "page2-spa");
           }
           //closeBranchJourney();
+          dataLayer.push({'event': 'TRIGGER_SPA_CODE'});
         } else {
           window.location.href = 'https://rob-gioia-branch.github.io/index.html'
         }
@@ -84,6 +85,7 @@
           window.history.replaceState(null, null, "page3-spa");
         }
         //closeBranchJourney();
+        dataLayer.push({'event': 'TRIGGER_SPA_CODE'});
       }  
     </script>
   </body>
