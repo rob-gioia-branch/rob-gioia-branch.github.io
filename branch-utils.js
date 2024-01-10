@@ -18,13 +18,13 @@ function initializeBranch(isTestMode = false) {
   if(isTestMode) {
     branch.init('key_live_alXEebrYD6sXYsXfU8PREhnhzrcWdEN8', function(err, data) {
       window.linkData = data;
-      //checkIfStartupSystemsFinishedInitializing();
+      checkIfStartupSystemsFinishedInitializing();
       
     });
   } else {
-    branch.init('key_live_bfDmUk7zZWi46XpUIzj5YbffsAk0WfJO', function(err, data) {
+    branch.init('key_live_alXEebrYD6sXYsXfU8PREhnhzrcWdEN8', function(err, data) {
       window.linkData = data;
-      //checkIfStartupSystemsFinishedInitializing();
+      checkIfStartupSystemsFinishedInitializing();
     });
   }
 }
