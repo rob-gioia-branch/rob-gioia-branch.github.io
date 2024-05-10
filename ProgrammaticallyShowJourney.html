@@ -19,7 +19,7 @@
        branch.closeJourney(); //close the Journey first by default
        function handleCodeShareButtonClicked() {
          branch.closeJourney(); //close a Journey that might be showing
-         history.pushState({}, null, "https://rob-gioia-branch.github.io/ProgrammaticallyShowJourney.html?share_completed=true");
+         window.location.hash = "example";         
          branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
        }
 
