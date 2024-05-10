@@ -31,13 +31,17 @@
 
       function handleTagsShareButtonClicked() {
          branch.closeJourney(); //close a Journey that might be showing
-
+         var meta = document.createElement('meta');
+         meta.content = "branch:deeplink:shared";
+         document.getElementsByTagName('head')[0].appendChild(meta);
          branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
        }
 
        function handleTagsAddButtonClicked() {
          branch.closeJourney(); //close a Journey that might be showing
-
+         var meta = document.createElement('meta');
+         meta.content = "branch:deeplink:added_to_wishlist";
+         document.getElementsByTagName('head')[0].appendChild(meta);
          branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
        }
     </script>
