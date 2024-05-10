@@ -16,6 +16,8 @@
        <button id="tags-button-share" type="button" onclick="handleTagsShareButtonClicked()">Share</button> 
        <button id="tags-button-add" type="button" onclick="handleTagsAddButtonClicked()">Add to Wishlist</button> 
     <script>
+      var addedShareMetatag = false;
+      var addedAddToWishlistMetadata = false;
        function handleCodeShareButtonClicked() {
          branch.closeJourney(); //close a Journey that might be showing
          window.location.href = "https://rob-gioia-branch.github.io/ProgrammaticallyShowJourney.html?shared=true";
@@ -30,24 +32,28 @@
 
       function handleTagsShareButtonClicked() {
          branch.closeJourney(); //close a Journey that might be showing
+        if(!addedShareMetatag) {
          var meta = document.createElement('meta');
          meta.name = "branch:deeplink:shared";
          meta.content = "true";
          document.getElementsByTagName('head')[0].appendChild(meta);
+        }
          setTimeout(function(){
            branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
-         }, 200);
+         }, 500);
        }
 
        function handleTagsAddButtonClicked() {
          branch.closeJourney(); //close a Journey that might be showing
+         if(!addedAddToWishlistMetadata) {
          var meta = document.createElement('meta');
          meta.name = "branch:deeplink:added_to_wishlist";
          meta.content = "true";
          document.getElementsByTagName('head')[0].appendChild(meta);
+         }
          setTimeout(function(){
            branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
-         }, 200);
+         }, 500);
        }
     </script>
   </body>
