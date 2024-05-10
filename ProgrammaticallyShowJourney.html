@@ -40,9 +40,9 @@
          document.getElementsByTagName('head')[0].appendChild(meta);
            addedShareMetatag=true;
         }
-         setTimeout(function(){
+         // setTimeout(function(){
            branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
-         }, 500);
+         // }, 300);
        }
 
        function handleTagsAddButtonClicked() {
@@ -55,9 +55,9 @@
          document.getElementsByTagName('head')[0].appendChild(meta);
            addedAddToWishlistMetadata=true;
          }
-         setTimeout(function(){
+         // setTimeout(function(){
            branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
-         }, 500);
+         // }, 500);
        }
 
       function removeExistingBranchMetatags() {
