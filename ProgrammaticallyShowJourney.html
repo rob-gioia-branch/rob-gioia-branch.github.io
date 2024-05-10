@@ -59,12 +59,15 @@
        }
 
       function removeExistingBranchMetatags() {
+        console.log("Hit 1");
         if(addedAddToWishlistMetadata) {
-           document.querySelector("[name='branch:deeplink:added_to_wishlist']").remove()
+          console.log("Hit 2");
+           document.querySelector("[name='added_to_wishlist']").remove()
          }
 
         if(addedShareMetatag) {
-           document.querySelector("[name='branch:deeplink:shared']").remove()
+          console.log("Hit 3");
+           document.querySelector("[name='shared']").remove()
          }
       }
     </script>
