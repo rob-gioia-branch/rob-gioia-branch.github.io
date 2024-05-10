@@ -10,13 +10,36 @@
   </head>
   <body>
      <h1> Programmatically displaying the Journey </h1>
-       <button id="code-button-share" type="button" onclick="">Share</button> 
-       <button id="code-button-add" type="button" onclick="">Add to Wishlist</button> 
+       <button id="code-button-share" type="button" onclick="handleCodeShareButtonClicked">Share</button> 
+       <button id="code-button-add" type="button" onclick="handleCodeAddButtonClicked">Add to Wishlist</button> 
      <h1> Using Meta Tags </h1>
-       <button id="tags-button-share" type="button" onclick="">Share</button> 
-       <button id="tags-button-add" type="button" onclick="">Add to Wishlist</button> 
+       <button id="tags-button-share" type="button" onclick="handleTagsShareButtonClicked">Share</button> 
+       <button id="tags-button-add" type="button" onclick="handleTagsAddButtonClicked">Add to Wishlist</button> 
     <script>
+       branch.closeJourney(); //close the Journey first by default
+       function handleCodeShareButtonClicked() {
+         branch.closeJourney(); //close a Journey that might be showing
+         window.location.href = window.location.href + "?share_completed=true";
+         branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
+       }
 
+       function handleCodeAddButtonClicked() {
+         branch.closeJourney(); //close a Journey that might be showing
+
+         branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
+       }
+
+      function handleTagsShareButtonClicked() {
+         branch.closeJourney(); //close a Journey that might be showing
+
+         branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
+       }
+
+       function handleTagsAddButtonClicked() {
+         branch.closeJourney(); //close a Journey that might be showing
+
+         branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
+       }
     </script>
   </body>
 </html>
