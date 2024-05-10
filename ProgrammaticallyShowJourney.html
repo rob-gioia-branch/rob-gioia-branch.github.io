@@ -38,6 +38,7 @@
          meta.name = "branch:deeplink:shared";
          meta.content = "true";
          document.getElementsByTagName('head')[0].appendChild(meta);
+           addedShareMetatag=true;
         }
          setTimeout(function(){
            branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
@@ -52,6 +53,7 @@
          meta.name = "branch:deeplink:added_to_wishlist";
          meta.content = "true";
          document.getElementsByTagName('head')[0].appendChild(meta);
+           addedAddToWishlistMetadata=true;
          }
          setTimeout(function(){
            branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
@@ -62,12 +64,14 @@
         console.log("Hit 1");
         if(addedAddToWishlistMetadata) {
           console.log("Hit 2");
-           document.querySelector("[name='added_to_wishlist']").remove()
+           document.querySelector("[name='branch:deeplink:added_to_wishlist']").remove()
+          addedAddToWishlistMetadata = false;
          }
 
         if(addedShareMetatag) {
           console.log("Hit 3");
-           document.querySelector("[name='shared']").remove()
+           document.querySelector("[name='branch:deeplink:shared']").remove()
+          addedShareMetatag = false;
          }
       }
     </script>
