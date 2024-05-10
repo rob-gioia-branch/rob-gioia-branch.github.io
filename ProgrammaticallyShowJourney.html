@@ -31,8 +31,9 @@
        }
 
       function handleTagsShareButtonClicked() {
+         removeExistingBranchMetatags();
          branch.closeJourney(); //close a Journey that might be showing
-        if(!addedShareMetatag) {
+         if(!addedShareMetatag) {
          var meta = document.createElement('meta');
          meta.name = "branch:deeplink:shared";
          meta.content = "true";
@@ -44,6 +45,7 @@
        }
 
        function handleTagsAddButtonClicked() {
+         removeExistingBranchMetatags();
          branch.closeJourney(); //close a Journey that might be showing
          if(!addedAddToWishlistMetadata) {
          var meta = document.createElement('meta');
@@ -55,6 +57,16 @@
            branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
          }, 500);
        }
+
+      function removeExistingBranchMetatags() {
+        if(addedAddToWishlistMetadata || addedShareMetadata) {
+           let head = document.getElementsByTagName('head')[0];
+           let child = head.lastElementChild;
+           head.removeChild(child);
+           var addedShareMetatag = false;
+           var addedAddToWishlistMetadata = false;
+         }
+      }
     </script>
   </body>
 </html>
