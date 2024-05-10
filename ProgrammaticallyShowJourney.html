@@ -41,7 +41,7 @@
        function handleTagsAddButtonClicked() {
          branch.closeJourney(); //close a Journey that might be showing
          var meta = document.createElement('meta');
-         meta.name =  = "branch:deeplink:added_to_wishlist";
+         meta.name = "branch:deeplink:added_to_wishlist";
          meta.content = "true";
          document.getElementsByTagName('head')[0].appendChild(meta);
          branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
