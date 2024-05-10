@@ -19,7 +19,7 @@
        branch.closeJourney(); //close the Journey first by default
        function handleCodeShareButtonClicked() {
          branch.closeJourney(); //close a Journey that might be showing
-         window.location.href = window.location.href + "?share_completed=true";
+         window.history.pushState("share_completed", "Title", window.location.href + "?share_completed=true");
          branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
        }
 
