@@ -40,9 +40,7 @@
          document.getElementsByTagName('head')[0].appendChild(meta);
            addedShareMetatag=true;
         }
-         // setTimeout(function(){
            branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
-         // }, 300);
        }
 
        function handleTagsAddButtonClicked() {
@@ -55,21 +53,16 @@
          document.getElementsByTagName('head')[0].appendChild(meta);
            addedAddToWishlistMetadata=true;
          }
-         // setTimeout(function(){
            branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
-         // }, 500);
        }
 
       function removeExistingBranchMetatags() {
-        console.log("Hit 1");
         if(addedAddToWishlistMetadata) {
-          console.log("Hit 2");
            document.querySelector("[name='branch:deeplink:added_to_wishlist']").remove()
           addedAddToWishlistMetadata = false;
          }
 
         if(addedShareMetatag) {
-          console.log("Hit 3");
            document.querySelector("[name='branch:deeplink:shared']").remove()
           addedShareMetatag = false;
          }
