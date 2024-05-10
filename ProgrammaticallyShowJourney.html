@@ -16,7 +16,6 @@
        <button id="tags-button-share" type="button" onclick="handleTagsShareButtonClicked()">Share</button> 
        <button id="tags-button-add" type="button" onclick="handleTagsAddButtonClicked()">Add to Wishlist</button> 
     <script>
-       branch.closeJourney(); //close the Journey first by default
        function handleCodeShareButtonClicked() {
          branch.closeJourney(); //close a Journey that might be showing
          window.location.href = "https://rob-gioia-branch.github.io/ProgrammaticallyShowJourney.html?shared=true";
@@ -35,7 +34,9 @@
          meta.name = "branch:deeplink:shared";
          meta.content = "true";
          document.getElementsByTagName('head')[0].appendChild(meta);
-         branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
+         setTimeout(function(){
+           branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
+         });
        }
 
        function handleTagsAddButtonClicked() {
@@ -44,7 +45,9 @@
          meta.name = "branch:deeplink:added_to_wishlist";
          meta.content = "true";
          document.getElementsByTagName('head')[0].appendChild(meta);
-         branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
+         setTimeout(function(){
+           branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
+         });
        }
     </script>
   </body>
