@@ -19,7 +19,9 @@
        branch.closeJourney(); //close the Journey first by default
        function handleCodeShareButtonClicked() {
          branch.closeJourney(); //close a Journey that might be showing
-         window.location.hash = "share_completed"; //set the hash, changing the URL to match the Journey criteria
+         var urlParams = new URLSearchParams(window.location.search);
+         inputParams.set('share_completed', 'true');
+         window.location.search = inputParams; //set the hash, changing the URL to match the Journey criteria
          branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
        }
 
