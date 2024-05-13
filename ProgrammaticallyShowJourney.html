@@ -32,28 +32,30 @@
 
       function handleTagsShareButtonClicked() {
          removeExistingBranchMetatags();
-         branch.closeJourney(); //close a Journey that might be showing
+         
          if(!addedShareMetatag) {
-         var meta = document.createElement('meta');
-         meta.name = "branch:deeplink:shared";
-         meta.content = "true";
-         document.getElementsByTagName('head')[0].appendChild(meta);
+           branch.closeJourney(); //close a Journey that might be showing
+           var meta = document.createElement('meta');
+           meta.name = "branch:deeplink:shared";
+           meta.content = "true";
+           document.getElementsByTagName('head')[0].appendChild(meta);
            addedShareMetatag=true;
-        }
            branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
+        }
        }
 
        function handleTagsAddButtonClicked() {
          removeExistingBranchMetatags();
-         branch.closeJourney(); //close a Journey that might be showing
+         
          if(!addedAddToWishlistMetadata) {
-         var meta = document.createElement('meta');
-         meta.name = "branch:deeplink:added_to_wishlist";
-         meta.content = "true";
-         document.getElementsByTagName('head')[0].appendChild(meta);
+           branch.closeJourney(); //close a Journey that might be showing
+           var meta = document.createElement('meta');
+           meta.name = "branch:deeplink:added_to_wishlist";
+           meta.content = "true";
+           document.getElementsByTagName('head')[0].appendChild(meta);
            addedAddToWishlistMetadata=true;
-         }
            branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
+         }
        }
 
       function removeExistingBranchMetatags() {
