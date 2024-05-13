@@ -40,7 +40,9 @@
            meta.content = "true";
            document.getElementsByTagName('head')[0].appendChild(meta);
            addedShareMetatag=true;
-           branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
+           setTimeout(function(){
+             branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
+           }, 300);
         }
        }
 
@@ -54,7 +56,9 @@
            meta.content = "true";
            document.getElementsByTagName('head')[0].appendChild(meta);
            addedAddToWishlistMetadata=true;
-           branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
+           setTimeout(function(){
+             branch.track('pageview'); //trigger a check to show the Journey if targeting is matched
+           }, 300);
          }
        }
 
