@@ -10,7 +10,7 @@
     <!--Add button to initiate auth sequence-->
     <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
 
-    <div>
+    <div id="customer-info-form" visibility="hidden">
       <h3>Customer Name</h3>
       <input type="text" id="textInput" placeholder="Enter client name..." />
       <button onclick="handleClick()">Create</button>
@@ -90,7 +90,7 @@
             throw (resp);
           }
           document.getElementById('authorize_button').style.visibility = 'hidden';
-          //TODO: auth finished, display the form
+          document.getElementById('customer-info-form').style.visibility = 'visible';
         };
 
         if (gapi.client.getToken() === null) {
