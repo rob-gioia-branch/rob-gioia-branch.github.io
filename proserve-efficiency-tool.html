@@ -10,7 +10,7 @@
     <!--Add button to initiate auth sequence-->
     <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
 
-    <div id="customer-info-form" hidden>
+    <div id="customer-info-form">
       <h3>Customer Name</h3>
       <input type="text" id="textInput" placeholder="Enter client name..." />
       <button onclick="handleClick()">Create</button>
@@ -38,7 +38,8 @@
       let gisInited = false;
 
       document.getElementById('authorize_button').style.visibility = 'hidden';
-
+      document.getElementById('customer_info_form').style.visibility = 'hidden';
+      
       /**
        * Callback after api.js is loaded.
        */
