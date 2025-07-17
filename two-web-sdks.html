@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dual Branch SDK Example</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1>Branch SDK Dual Implementation Test</h1>
+
+  <script>
+    // Load and initialize HSN Branch SDK
+    (function loadHSNBranch() {
+      var hsnScript = document.createElement('script');
+      hsnScript.src = "https://cdn.branch.io/branch-latest.min.js";
+      hsnScript.onload = function () {
+        var hsnBranch = branch.noConflict(); // remove global 'branch' and assign this instance
+        hsnBranch.init('key_live_alXEebrYD6sXYsXfU8PREhnhzrcWdEN8'); // ← replace with real HSN Branch key
+        window.hsnBranch = hsnBranch;
+
+        // Fire purchase event (optional: delay or move this to another script)
+        hsnBranch.track('PURCHASE', {
+          transaction_id: 'HSN-ORDER-001',
+          revenue: 149.99,
+          currency: 'USD',
+          description: 'HSN order',
+          custom_data: {
+            source: 'hsn.com',
+            platform: 'web'
+          }
+        });
+
+        console.log('✅ HSN Branch event sent');
+      };
+      document.head.appendChild(hsnScript);
+    })();
+
+    // Load and initialize QVC Streaming Branch SDK
+    (function loadQVCBranch() {
+      var qvcScript = document.createElement('script');
+      qvcScript.src = "https://cdn.branch.io/branch-latest.min.js";
+      qvcScript.onload = function () {
+        var qvcBranch = branch.noConflict(); // isolate this second instance
+        qvcBranch.init('key_test_ef6CmcD1uZvW0E1cQZ5o7ajfyFn6nr9a'); // ← replace with real QVC Branch key
+        window.qvcBranch = qvcBranch;
+
+        // Fire purchase event (optional)
+        qvcBranch.track('PURCHASE', {
+          transaction_id: 'QVC-ORDER-002',
+          revenue: 89.99,
+          currency: 'USD',
+          description: 'QVC streaming order',
+          custom_data: {
+            source: 'qvcstreaming.com',
+            platform: 'web'
+          }
+        });
+
+        console.log('✅ QVC Branch event sent');
+      };
+      document.head.appendChild(qvcScript);
+    })();
+  </script>
+</body>
+</html>
