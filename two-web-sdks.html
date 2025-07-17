@@ -11,7 +11,7 @@
     // Load and initialize HSN Branch SDK
     (function loadHSNBranch() {
       var hsnScript = document.createElement('script');
-      hsnScript.src = "https://cdn.branch.io/branch-latest.min.js";
+      hsnScript.src = "https://cdn.branch.io/branch-latest.js";
       hsnScript.onload = function () {
         var hsnBranch = branch.noConflict(); // remove global 'branch' and assign this instance
         hsnBranch.init('key_live_alXEebrYD6sXYsXfU8PREhnhzrcWdEN8'); // ← replace with real HSN Branch key
@@ -37,7 +37,7 @@
     // Load and initialize QVC Streaming Branch SDK
     (function loadQVCBranch() {
       var qvcScript = document.createElement('script');
-      qvcScript.src = "https://cdn.branch.io/branch-latest.min.js";
+      qvcScript.src = "https://cdn.branch.io/branch-latest.js";
       qvcScript.onload = function () {
         var qvcBranch = branch.noConflict(); // isolate this second instance
         qvcBranch.init('key_test_ef6CmcD1uZvW0E1cQZ5o7ajfyFn6nr9a'); // ← replace with real QVC Branch key
