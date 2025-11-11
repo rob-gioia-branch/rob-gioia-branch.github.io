@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html> 
   <head>
+    
     <!-- Google Tag Manager -->
       <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -13,10 +14,27 @@
          (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener banner closeBanner closeJourney data deepview deepviewCta first init link logout removeListener setBranchViewData setIdentity track trackCommerceEvent logEvent disableTracking getBrowserFingerprintId crossPlatformIds lastAttributedTouchData setAPIResponseCallback qrCode".split(" "), 0);
          // init Branch
          branch.init('key_live_awbRBqgkvdxi8A2xcJAcQaajAvaQsv48');
+         
          window.onload = function(e){ 
-          setTimeout(() => {
-            closeBranchJourney();
-          }, 250);
+           window.myRoutingData = {
+            routingData: 'value_for_deep_linking_from_window',
+            userId: 'my_user_id_from_window'
+           };
+          
+          if (window.myRoutingData && typeof branch !== 'undefined') {
+               const dynamicData = window.myRoutingData;
+              'routingData': dynamicData.routingData,
+              'userId': dynamicData.userId 
+          };
+
+          branch.setBranchViewData({
+            data: deepLinkData
+          });
+        }
+          // setTimeout(() => {
+            
+            
+          // }, 100);
         }
     </script>
   </head>
