@@ -10,27 +10,31 @@
       })(window,document,'script','dataLayer','GTM-P56738MR');</script>
     <!-- End Google Tag Manager -->
     <script> 
-       // load Branch
+         // load Branch
          (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener banner closeBanner closeJourney data deepview deepviewCta first init link logout removeListener setBranchViewData setIdentity track trackCommerceEvent logEvent disableTracking getBrowserFingerprintId crossPlatformIds lastAttributedTouchData setAPIResponseCallback qrCode".split(" "), 0);
+         //set user ID
+         branch.setIdentity("rob-user-id");
+         //set additional data
+         branch.setRequestMetadata("example-key","example-value");
          // init Branch
          branch.init('key_live_mbErCMtrzeheAWS0Xagg7hjbwDkaZ6SP');
          
-         window.onload = function(e){ 
-           window.myRoutingData = {
-            routingData: 'value_for_deep_linking_from_window',
-            userId: 'my_user_id_from_window'
-           };
+        //  window.onload = function(e){ 
+        //    window.myRoutingData = {
+        //     routingData: 'value_for_deep_linking_from_window',
+        //     userId: 'my_user_id_from_window'
+        //    };
           
-          if (window.myRoutingData && typeof branch !== 'undefined') {
-               const dynamicData = window.myRoutingData;
-              'routingData': dynamicData.routingData,
-              'userId': dynamicData.userId 
-          };
+        //   if (window.myRoutingData && typeof branch !== 'undefined') {
+        //        const dynamicData = window.myRoutingData;
+        //       'routingData': dynamicData.routingData,
+        //       'userId': dynamicData.userId 
+        //   };
 
-          branch.setBranchViewData({
-            data: deepLinkData
-          });
-        }
+        //   branch.setBranchViewData({
+        //     data: deepLinkData
+        //   });
+        // }
           // setTimeout(() => {
             
             
