@@ -10,23 +10,31 @@
       })(window,document,'script','dataLayer','GTM-P56738MR');</script> -->
     <!-- End Google Tag Manager -->
     <script> 
-         // load Branch
-         (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener banner closeBanner closeJourney data deepview deepviewCta first init link logout removeListener setBranchViewData setIdentity track trackCommerceEvent logEvent disableTracking getBrowserFingerprintId crossPlatformIds lastAttributedTouchData setAPIResponseCallback qrCode".split(" "), 0);
-         //set user ID
-         branch.setIdentity("rob-user-id");
-         //set additional data
-         branch.setBranchViewData({
-              data: {
-                id: 'rob-user-id',
-                example: 'example-value'
-              }
-            },
-            function(err) {
-            	if (err) {
-            		console.log(err);
-            	}
-              branch.init('key_live_mbErCMtrzeheAWS0Xagg7hjbwDkaZ6SP');
-            });
+         // Function to ensure Branch SDK is loaded and stubbed (your existing script loader)
+(function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener banner closeBanner closeJourney closeView data deepview deepviewCta first init link logout removeListener setBranchViewData setIdentity track trackCommerceEvent logEvent disableTracking getBrowserFingerprintId crossPlatformIds lastAttributedTouchData setAPIResponseCallback qrCode".split(" "), 0);
+         
+  // 1. Set the user ID first
+  branch.setIdentity("rob-user-id");
+
+  // 2. Initialize Branch and pass the custom data in the `init` options
+  // This data will be automatically included in any deep link created by Branch (e.g., Journey CTA link)
+  branch.init('key_live_mbErCMtrzeheAWS0Xagg7hjbwDkaZ6SP', {
+      // This is the data object that will be attached to the deep link
+      data: {
+          id: 'rob-user-id',
+          example: 'example-value'
+      },
+      // The `listen` option ensures Journeys/Branch Views are displayed
+      listen: true 
+  }, function(err, data) {
+      if (err) {
+          // Handle initialization error
+          console.error('Branch Init Error:', err);
+          return;
+      }
+      // Initialization success, and Journeys should be ready to display
+      console.log('Branch Init Data:', data);
+  });
          // init Branch
          
          
