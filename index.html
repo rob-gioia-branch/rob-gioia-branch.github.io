@@ -15,7 +15,17 @@
          //set user ID
          branch.setIdentity("rob-user-id");
          //set additional data
-         branch.setRequestMetadata("example-key","example-value");
+         branch.setBranchViewData({
+              data: {
+                id: 'rob-user-id',
+                example: 'example-value'
+              }
+            },
+            function(err) {
+            	if (err) {
+            		console.log(err);
+            	}
+            });
          // init Branch
          branch.init('key_live_mbErCMtrzeheAWS0Xagg7hjbwDkaZ6SP');
          
