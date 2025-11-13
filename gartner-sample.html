@@ -8,6 +8,26 @@
          // Load Branch
          (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener banner closeBanner closeJourney data deepview deepviewCta first init link logout removeListener setBranchViewData setIdentity track trackCommerceEvent logEvent disableTracking getBrowserFingerprintId crossPlatformIds lastAttributedTouchData setAPIResponseCallback qrCode setRequestMetaData setAPIUrl getAPIUrl setDMAParamsForEEA".split(" "), 0);
 
+		  var linkData = {
+		  campaign: 'content 123',
+		  channel: 'facebook',
+		  feature: 'dashboard',
+		  stage: 'new user',
+		  tags: [ 'tag1', 'tag2', 'tag3' ],
+		  alias: '',
+		  data: {
+		    'custom_bool': true,
+		    'custom_int': Date.now(),
+		    'custom_string': 'hello'
+		  }
+		};
+		
+		 // Set Branch Deep Link data dynamically for a given mobile web Journey
+		 branch.setBranchViewData(linkData);
+
+		 // Set ID for cross-platform and cross-device deduplication (non-PII)
+		 branch.setIdentity("unique-user-123");
+		
          // Initialize Branch 
          branch.init('key_live_YOUR_KEY_GOES_HERE', function(err, data) {
 	         console.log(err, data);
