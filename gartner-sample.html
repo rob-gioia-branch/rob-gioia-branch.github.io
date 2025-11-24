@@ -27,11 +27,19 @@
 
 		 // Set ID for cross-platform and cross-device deduplication (non-PII)
 		 branch.setIdentity("unique-user-123");
-		
-         // Initialize Branch 
-         branch.init('key_live_alXEebrYD6sXYsXfU8PREhnhzrcWdEN8', function(err, data) {
-	         console.log(err, data);
-         });
+
+		 function isMobileDevice() {
+        	return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+               (typeof window.orientation !== "undefined") || 
+               (navigator.userAgent.indexOf('Mobi') > -1);
+    	 } 
+		 if (isMobileDevice()) {
+	         branch.init('key_live_alXEebrYD6sXYsXfU8PREhnhzrcWdEN8', function(err, data) {
+		         console.log(err, data);
+	         });
+		 } else {
+			 console.log('Branch initialization skipped on desktop.');
+		 }
     </script>
 </head>
 <body>
