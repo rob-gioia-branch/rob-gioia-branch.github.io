@@ -26,7 +26,11 @@
 		 branch.setBranchViewData(linkData);
 
 		 // Set ID for cross-platform and cross-device deduplication (non-PII)
-		 branch.setIdentity("unique-user-123");
+		 // branch.setIdentity("unique-user-123");
+
+		branch.setIdentity('Rob Gioia User ID', function (err, data) {
+  			console.log(err, data);
+		});
 
 		 function isMobileDevice() {
         	return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
