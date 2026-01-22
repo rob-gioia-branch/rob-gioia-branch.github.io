@@ -21,18 +21,12 @@
 		    'custom_string': 'hello'
 		  }
 		};
-		
-		 // Set Branch Deep Link data dynamically for a given mobile web Journey
-		 branch.setBranchViewData(linkData);
 
 		 // Set ID for cross-platform and cross-device deduplication (non-PII)
 		 // branch.setIdentity("unique-user-123");
 
 		branch.setIdentity('Rob Gioia User ID', function (err, data) {
-  			console.log(err, data);
-		});
-
-		 function isMobileDevice() {
+  			function isMobileDevice() {
         	return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
                (typeof window.orientation !== "undefined") || 
                (navigator.userAgent.indexOf('Mobi') > -1);
@@ -44,6 +38,7 @@
 		 } else {
 			 console.log('Branch initialization skipped on desktop.');
 		 }
+		});
     </script>
 </head>
 <body>
