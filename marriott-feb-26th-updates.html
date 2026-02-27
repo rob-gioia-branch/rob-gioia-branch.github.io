@@ -2,15 +2,40 @@
 <html>
    <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title></title>
+      <title>Full Screen Background</title>
+      <style>
+         body, html {
+            height: 100%;
+            margin: 0;
+         }
+
+         body {
+            /* Replace the URL below with your actual image link */
+            background-image: url('rob-gioia-branch.github.io/marriott-mock-background.png'); 
+            
+            /* Center the background image */
+            background-position: center; 
+            
+            /* Do not repeat the image */
+            background-repeat: no-repeat; 
+            
+            /* Scale the image to cover the entire screen */
+            background-size: cover; 
+            
+            /* Fixed ensures it doesn't scroll with the content */
+            background-attachment: fixed; 
+            
+            color: white;
+         }
+      </style>
       <script>
          // Load Branch
          (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener banner closeBanner closeJourney data deepview deepviewCta first init link logout removeListener setBranchViewData setIdentity track trackCommerceEvent logEvent disableTracking getBrowserFingerprintId crossPlatformIds lastAttributedTouchData setAPIResponseCallback qrCode setRequestMetaData setAPIUrl getAPIUrl setDMAParamsForEEA".split(" "), 0);
             branch.init('key_live_jlOdk0lZqmew10LqP43TtdhaxDeFwnIj', function(err, data) {
-	          console.log(err, data);
+              console.log(err, data);
          });
       </script>
    </head>
-   <body style="background-color: white; color: white;">
-   </body>
+   <body>
+      </body>
 </html>
