@@ -11,7 +11,7 @@
         branch.addListener('didClickJourneyCTA', function(event, data) {
             console.log("CTA Clicked! Re-displaying Journey...");
             setTimeout(function() {
-                branch.showJourney();
+                branch.track('pageview');
             }, 500);
         });
 
