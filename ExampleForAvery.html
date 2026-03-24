@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title> Test Page for Avery</title>
+      <script>
+
+        // 1. Logic to keep Journey visible after CTA click
+        branch.addListener('didClickJourneyCTA', function(event, data) {
+            console.log("CTA Clicked! Re-displaying Journey...");
+            // Use a slight timeout to ensure the default "close" 
+            // animation finishes before we force it back open.
+            setTimeout(function() {
+                branch.showJourney();
+            }, 500);
+        });
+
+        // 2. Logic to capture data when a user closes the Journey
+        branch.addListener('didClickJourneyClose', function(event, data) {
+            console.log("User dismissed the Journey.");
+            console.log("Event Type:", event);
+            console.log("Data Payload:", data);
+        });
+        
+        // 3. Load Branch
+        (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener banner closeBanner closeJourney data deepview deepviewCta first init link logout removeListener setBranchViewData setIdentity track trackCommerceEvent logEvent disableTracking getBrowserFingerprintId crossPlatformIds lastAttributedTouchData setAPIResponseCallback qrCode setRequestMetaData setAPIUrl getAPIUrl setDMAParamsForEEA".split(" "), 0);
+        branch.init('key_live_mbErCMtrzeheAWS0Xagg7hjbwDkaZ6SP', function(err, data) {
+        });      
+      </script>
+   </head>
+   <body></body>
+</html>
